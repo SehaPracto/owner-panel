@@ -48,7 +48,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: #d3d3d3;
+  background: #3f4394;
   height: 100%;
   width: 250px;
   padding: 100px 15px;
@@ -58,12 +58,31 @@ export default {
 }
 .side-bar-item {
   color: white;
-  font-size: 18px;
-  padding: auto auto;
+  font-size: 20px;
+  padding: 15px 0px;
   text-align: center;
+}
+.side-bar-item:hover {
+  color: #4ab9b1;
+  cursor: pointer;
 }
 .logout-btn {
   position: absolute;
   bottom: 0;
+  margin-bottom: 15px;
+}
+.logout-btn:hover {
+  color: red;
+}
+
+@media screen and (max-width: 700px) {
+  .side-bar {
+    width: 150px;
+    padding: 100px 15px;
+  }
+  .side-bar-item {
+    color: white;
+    font-size: 18px;
+  }
 }
 </style>

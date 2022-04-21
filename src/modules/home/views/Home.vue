@@ -46,12 +46,24 @@ export default {
   width: 80%;
   float: right;
   padding: 20px;
-
   position: relative;
 }
 .left-con {
   width: 20%;
   float: left;
   padding: 20px;
+  position: relative;
+}
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .right-con {
+    margin-left: 80px;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1250px) {
+  .right-con {
+    margin-left: 150px;
+  }
 }
 </style>

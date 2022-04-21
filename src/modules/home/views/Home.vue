@@ -62,8 +62,5 @@ export default {
 }
 
 @media screen and (min-width: 701px) and (max-width: 1250px) {
-  .right-con {
-    margin-left: 150px;
-  }
 }
 </style>

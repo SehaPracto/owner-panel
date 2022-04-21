@@ -2,33 +2,35 @@
   <div class="side-bar">
     <ul class="side-bar-list">
       <li class="side-bar-item" @click="changeDisplayComponent('HomeCharts')">
-        Home
+        <i class="fas fa-home"></i> Home
       </li>
       <li
         class="side-bar-item"
         @click="changeDisplayComponent('HumanResources')"
       >
-        Human Resources
+        <i class="fas fa-briefcase"></i> Human Resources
       </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Slides')">
-        Slides
+        <i class="fas fa-ad"></i> Slides
       </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Countries')">
-        Countries
+        <i class="fas fa-globe"></i> Countries
       </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Patients')">
-        Patients
+        <i class="fas fa-user"></i> Patients
       </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Doctors')">
-        Doctors
+        <i class="fas fa-stethoscope"></i> Doctors
       </li>
       <li
         class="side-bar-item"
         @click="changeDisplayComponent('HealthCareProviders')"
       >
-        Health Care Providers
+        <i class="fas fa-syringe"></i> Health Care Providers
       </li>
-      <li class="side-bar-item logout-btn">Logout</li>
+      <li class="side-bar-item logout-btn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </li>
     </ul>
   </div>
 </template>
@@ -59,12 +61,16 @@ export default {
 .side-bar-item {
   color: white;
   font-size: 20px;
-  padding: 15px 0px;
-  text-align: center;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
 }
 .side-bar-item:hover {
   color: #4ab9b1;
   cursor: pointer;
+}
+.side-bar-item i {
+  margin-right: 5px;
 }
 .logout-btn {
   position: absolute;

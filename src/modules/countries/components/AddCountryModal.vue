@@ -19,7 +19,20 @@
           placeholder="Name Arabic"
           required
         />
-        <VueFilePond />
+        <!-- <input class="file-upload" type="file" @change="handleFile" /> -->
+        <a-upload-dragger
+          v-model:fileList="fileList"
+          name="file"
+          :multiple="true"
+          class="file-upload"
+          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          @change="handleFile"
+          @drop="handleFile"
+        >
+          <p class="ant-upload-text">
+            Click or drag Image to this area to upload
+          </p>
+        </a-upload-dragger>
         <input class="add-country-btn" type="submit" value="Add Country" />
       </form>
     </div>
@@ -36,9 +49,8 @@ export default {
     };
   },
   methods: {
-    handleFile(info) {
-      console.log(info.dataTransfer);
-      console.log(this.fileList);
+    handleFile(event) {
+      console.log(event.file);
     },
     addCountry() {
       console.log("add");

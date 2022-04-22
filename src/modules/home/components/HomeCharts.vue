@@ -1,5 +1,5 @@
 <template>
-  <div class="spinner" v-if="isLoading"><a-spin size="large" /></div>
+  <Loader v-if="isLoading" />
   <div style="margin: auto auto" v-else>
     <a-row>
       <a-col :span="6">
@@ -20,10 +20,12 @@
 
 <script>
 import HomeStatisticsCard from "./HomeStatisticsCard.vue";
+import Loader from "@/components/Loader.vue";
 import axiosProvider from "@/data/providers/axiosProvider";
 export default {
   components: {
     HomeStatisticsCard,
+    Loader,
   },
   data() {
     return {

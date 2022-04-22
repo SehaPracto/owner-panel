@@ -13,12 +13,16 @@
 import SideBar from "../components/SideBar.vue";
 import HomeCharts from "../components/HomeCharts.vue";
 import Patients from "@/modules/patient/views/Patients.vue";
+import HumanResources from "@/modules/human_resources/views/HumanResources.vue";
+import Slides from "@/modules/slides/views/Slides.vue";
 import axiosProvider from "@/data/providers/axiosProvider";
 export default {
   components: {
     HomeCharts,
     SideBar,
     Patients,
+    HumanResources,
+    Slides,
   },
   data() {
     return {

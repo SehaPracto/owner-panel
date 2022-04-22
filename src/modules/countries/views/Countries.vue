@@ -1,6 +1,7 @@
 <template>
   <loader v-if="isLoading" />
   <div class="countries" v-else>
+    <button @click="showAddCountryModal">Add Country</button>
     <AddCountryModal v-show="isShowModal" />
   </div>
 </template>
@@ -21,10 +22,19 @@ export default {
       countries: [],
     };
   },
+  methods: {
+    async getCountries() {
+      const countries = await countryServices.getAllCountries();
+      this.countries = countries;
+    },
+    async addCountry() {},
+    showAddCountryModal() {
+      this.isShowModal = !this.isShowModal;
+    },
+  },
   async mounted() {
     this.isLoading = true;
-    const countries = await countryServices.getAllCountries();
-    this.countries = countries;
+    await this.getCountries();
     this.isLoading = false;
   },
 };

@@ -1,8 +1,8 @@
 import axios from "axios";
 
 class AxiosProvider {
-  // baseUrl = "http://192.168.1.102:3000/adminapi";
-  baseUrl = "https://app.sehapracto.com/adminapi";
+  baseUrl = "http://192.168.1.102:3000/adminapi";
+  // baseUrl = "https://app.sehapracto.com/adminapi";
 
   async getRequest(path, token = "") {
     try {

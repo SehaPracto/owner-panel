@@ -1,5 +1,5 @@
 <template>
-  <div class="spinner" v-if="isLoading"><a-spin size="large" /></div>
+  <div class="spinner"><a-spin size="large" /></div>
 </template>
 
 <style>

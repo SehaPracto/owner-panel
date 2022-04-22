@@ -49,11 +49,4 @@ export default {
 </script>
 
 <style>
-.spinner {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
 </style>

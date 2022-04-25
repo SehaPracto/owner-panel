@@ -4,6 +4,7 @@
       <h2>Add Country</h2>
     </div>
     <div class="add-country-modal">
+      <p class="success-text">{{ status }}</p>
       <form
         action=""
         @submit.prevent="addCountry"
@@ -17,6 +18,7 @@
           required
           v-model="name"
         />
+        <p class="text-error">{{ nameError }}</p>
         <input
           name="name_ar"
           class="input-text"
@@ -25,9 +27,12 @@
           required
           v-model="nameAr"
         />
+        <p class="text-error">{{ nameArError }}</p>
+
         <!-- <input class="file-upload" type="file" @change="handleFile" /> -->
         <input class="file-upload" type="file" @change="handleFile" required />
         <input class="add-country-btn" type="submit" value="Add Country" />
+        <p class="text-error">{{ flagIconError }}</p>
       </form>
     </div>
   </div>
@@ -43,6 +48,10 @@ export default {
       nameAr: "",
       fileList: [],
       file: null,
+      status: "",
+      nameError: "",
+      nameArError: "",
+      flagIconError: "",
     };
   },
   methods: {
@@ -50,12 +59,23 @@ export default {
       console.log(event.target.files[0]);
       this.file = event.target.files[0];
     },
+
     async addCountry() {
+      this.nameError = "";
+      this.nameArError = "";
+      this.flagIconError = "";
       const response = await countryServices.addCountry(
         this.name,
         this.nameAr,
         this.file
       );
+      if (response["message"] == "success") {
+        this.status = "Country Added Successfuly";
+      } else {
+        this.nameError = response["error"]["name"][0] ?? "";
+        this.nameArError = response["error"]["name_ar"][0] ?? "";
+        this.flagIconError = response["error"]["flag_icon"][0] ?? "";
+      }
       await countryServices.getAllCountries();
     },
   },

@@ -18,7 +18,7 @@
   font-size: 22px;
 }
 .input-text {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .title-bar {
   width: 100%;
@@ -36,4 +36,13 @@
 }
 .file-upload {
   margin: 10px auto;
+}
+.text-error {
+  color: red;
+}
+.success-text {
+  color: green;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
 }

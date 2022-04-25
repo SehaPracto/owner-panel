@@ -27,7 +27,9 @@ export default {
       const countries = await countryServices.getAllCountries();
       this.countries = countries;
     },
+
     async addCountry() {},
+
     showAddCountryModal() {
       this.isShowModal = !this.isShowModal;
     },

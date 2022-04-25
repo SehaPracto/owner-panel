@@ -46,7 +46,6 @@ export default {
     return {
       name: "",
       nameAr: "",
-      fileList: [],
       file: null,
       status: "",
       nameError: "",

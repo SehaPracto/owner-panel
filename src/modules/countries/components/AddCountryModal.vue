@@ -1,7 +1,8 @@
 <template>
-  <div class="modal">
+  <div class="modal-custom">
     <div class="title-bar">
       <h2>Add Country</h2>
+      <i class="close-btn fas fa-times" @click="closeModal"></i>
     </div>
     <div class="add-country-modal">
       <p class="success-text">{{ status }}</p>
@@ -28,7 +29,6 @@
           v-model="nameAr"
         />
         <p class="text-error">{{ nameArError }}</p>
-
         <!-- <input class="file-upload" type="file" @change="handleFile" /> -->
         <input class="file-upload" type="file" @change="handleFile" required />
         <input class="add-country-btn" type="submit" value="Add Country" />
@@ -58,7 +58,9 @@ export default {
       console.log(event.target.files[0]);
       this.file = event.target.files[0];
     },
-
+    closeModal() {
+      this.$emit("closeModal");
+    },
     async addCountry() {
       this.nameError = "";
       this.nameArError = "";
@@ -81,7 +83,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import "@/assets/styles/global.css";
 @import "../styles/add-country-modal.css";
 </style>

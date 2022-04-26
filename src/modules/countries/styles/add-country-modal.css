@@ -5,13 +5,19 @@
   align-content: center;
   padding: 0px 25px;
 }
-.modal {
+.modal-custom {
   height: 400px;
   width: 400px;
   border: 1px solid #d3d3d3;
   border-radius: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  font-size: 18px;
 }
-.modal h2 {
+.modal-custom h2 {
   color: white;
   text-align: center;
   margin: 10px auto;
@@ -24,6 +30,13 @@
   width: 100%;
   background: #3f4394;
   padding: 0;
+  position: relative;
+}
+.close-btn {
+  color: white;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 .add-country-btn {
   color: white;

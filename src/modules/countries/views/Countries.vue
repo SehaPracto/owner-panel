@@ -1,11 +1,9 @@
 <template>
   <loader v-if="isLoading" />
   <div class="countries" v-else>
-    <p class="text-center">hello</p>
-    <button class="col-md-12 text-center" @click="showAddCountryModal">
-      Add Country
+    <button class="add-btn col-md-12" @click="toggleShowAddCountryModal">
+      <i class="fas fa-plus"></i> Add Country
     </button>
-    <AddCountryModal v-show="isShowModal" />
     <table class="table">
       <thead>
         <tr>
@@ -28,6 +26,10 @@
         </tr>
       </tbody>
     </table>
+    <AddCountryModal
+      @closeModal="toggleShowAddCountryModal"
+      v-show="isShowModal"
+    />
   </div>
 </template>
 
@@ -49,13 +51,13 @@ export default {
   },
   methods: {
     async getCountries() {
-      const countries = await countryServices.getAllCountries();
-      this.countries = countries["countries"];
+      const response = await countryServices.getAllCountries();
+      this.countries = response["countries"];
     },
 
     async addCountry() {},
 
-    showAddCountryModal() {
+    toggleShowAddCountryModal() {
       this.isShowModal = !this.isShowModal;
     },
   },
@@ -70,5 +72,16 @@ export default {
 <style>
 .countries {
   min-height: 100vh;
+  position: relative;
+}
+.add-btn {
+  font-size: 18px;
+  margin-bottom: 50px;
+  background: #3f4394;
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
 }
 </style>

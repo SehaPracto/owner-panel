@@ -15,6 +15,16 @@ class CountryServices {
     const response = await axiosProvider.postRequest("add-country", formData);
     return response;
   }
+
+  async getCountryCities(id) {
+    const response = await axiosProvider.getRequest(`get-country-cities/${id}`);
+    return response;
+  }
+
+  async getCityProvinces(id) {
+    const response = await axiosProvider.getRequest(`get-city-provinces/${id}`);
+    return response;
+  }
 }
 
 const countryServices = new CountryServices();

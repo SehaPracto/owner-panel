@@ -31,12 +31,15 @@
   background: #3f4394;
   padding: 0;
   position: relative;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
 }
 .close-btn {
   color: white;
   position: absolute;
   right: 10px;
   top: 10px;
+  cursor: pointer;
 }
 .add-country-btn {
   color: white;

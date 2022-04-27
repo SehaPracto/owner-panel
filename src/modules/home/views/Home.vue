@@ -16,6 +16,7 @@ import Patients from "@/modules/patient/views/Patients.vue";
 import HumanResources from "@/modules/human_resources/views/HumanResources.vue";
 import Slides from "@/modules/slides/views/Slides.vue";
 import Countries from "@/modules/countries/views/Countries.vue";
+import Doctors from "@/modules/doctors/views/Doctors.vue";
 import axiosProvider from "@/data/providers/axiosProvider";
 export default {
   components: {
@@ -25,6 +26,7 @@ export default {
     HumanResources,
     Slides,
     Countries,
+    Doctors,
   },
   data() {
     return {

@@ -1,0 +1,25 @@
+.hcps {
+  min-height: 100vh;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.tab {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  width: 150px;
+  height: 50px;
+}
+
+.active-tab {
+  background: #3f4394;
+  color: white;
+  border-radius: 10px;
+}

@@ -22,10 +22,7 @@
       <li class="side-bar-item" @click="changeDisplayComponent('Doctors')">
         <i class="fas fa-stethoscope"></i> Doctors
       </li>
-      <li
-        class="side-bar-item"
-        @click="changeDisplayComponent('HealthCareProviders')"
-      >
+      <li class="side-bar-item" @click="changeDisplayComponent('Hcps')">
         <i class="fas fa-syringe"></i> Health Care Providers
       </li>
       <li class="side-bar-item logout-btn">

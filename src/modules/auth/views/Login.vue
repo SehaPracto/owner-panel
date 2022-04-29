@@ -22,7 +22,7 @@
           Sign in to your account
         </h2>
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
+      <form class="mt-8 space-y-6" @submit.prevent="login">
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
@@ -32,7 +32,6 @@
               name="email"
               type="email"
               autocomplete="email"
-              required=""
               class="
                 appearance-none
                 rounded-none
@@ -52,6 +51,8 @@
                 sm:text-sm
               "
               placeholder="Email address"
+              v-model="email"
+              required
             />
           </div>
           <div>
@@ -61,7 +62,6 @@
               name="password"
               type="password"
               autocomplete="current-password"
-              required=""
               class="
                 appearance-none
                 rounded-none
@@ -82,6 +82,8 @@
                 sm:text-sm
               "
               placeholder="Password"
+              v-model="password"
+              required
             />
           </div>
         </div>
@@ -115,7 +117,9 @@
             </a>
           </div>
         </div>
-
+        <div>
+          <p class="text-center error-text">{{ errorText }}</p>
+        </div>
         <div>
           <button
             type="submit"
@@ -150,9 +154,14 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script src="../scripts/loginScript">
 </script>
 
-<style>
+
+<style scoped>
+.error-text {
+  font-weight: bold;
+  color: red;
+  font-size: 18px;
+}
 </style>

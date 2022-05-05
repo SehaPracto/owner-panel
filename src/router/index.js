@@ -50,6 +50,14 @@ const routes = [
       }
     },
   },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: () => import("@/components/PageNotFound.vue"),
+    meta: {
+      requiresAuth: false,
+    },
+  },
 ];
 
 const router = createRouter({

@@ -25,7 +25,7 @@
       <li class="side-bar-item" @click="changeDisplayComponent('Hcps')">
         <i class="fas fa-syringe"></i> Health Care Providers
       </li>
-      <li class="side-bar-item logout-btn">
+      <li class="side-bar-item logout-btn" @click="logout">
         <i class="fas fa-sign-out-alt"></i> Logout
       </li>
     </ul>
@@ -41,6 +41,10 @@ export default {
     },
     setLastOpenTab(tab) {
       localStorage.setItem("lastTab", tab);
+    },
+    logout() {
+      this.$store.commit("logout");
+      this.$router.push("/");
     },
   },
   mounted() {

@@ -1,13 +1,20 @@
 import axiosProvider from "@/data/providers/axiosProvider";
+import store from "@/store/index";
 
 class SlidesServices {
   async getAllSlides() {
-    const response = await axiosProvider.getRequest("all-slides", {});
+    const response = await axiosProvider.getRequest(
+      "all-slides",
+      store.state.token
+    );
     return response;
   }
 
   async getSlide(id) {
-    const response = await axiosProvider.getRequest(`slide/${id}`, {});
+    const response = await axiosProvider.getRequest(
+      `slide/${id}`,
+      store.state.token
+    );
     return response;
   }
 
@@ -19,7 +26,11 @@ class SlidesServices {
     formData.append("contact", contact);
     formData.append("link", link);
     formData.append("img", img);
-    const response = await axiosProvider.postRequest("create-slide/", formData);
+    const response = await axiosProvider.postRequest(
+      "create-slide/",
+      formData,
+      store.state.token
+    );
     return response;
   }
 
@@ -33,7 +44,8 @@ class SlidesServices {
     formData.append("img", img);
     const response = await axiosProvider.postRequest(
       `update-slide/${id}`,
-      formData
+      formData,
+      store.state.token
     );
     return response;
   }

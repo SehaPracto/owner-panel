@@ -12,7 +12,10 @@ export default {
     async login() {
       const response = await authServices.login(this.email, this.password);
       if (response["message"] == "success") {
-        this.$router.push("home");
+        await this.$store.commit("login", response["token"]);
+        console.log(localStorage.getItem("token"));
+        this.$router.push({ path: "/home" });
+        console.log("here");
       } else {
         if (response["error"] == "invalid password") {
           this.errorText = "Invalid password";

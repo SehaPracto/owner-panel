@@ -8,6 +8,10 @@ class AuthServices {
     const response = await axiosProvider.postRequest("login", formData, {});
     return response;
   }
+  logout() {
+    this.$store.commit("logout");
+    this.$router.push("/home");
+  }
 }
 
 const authServices = new AuthServices();

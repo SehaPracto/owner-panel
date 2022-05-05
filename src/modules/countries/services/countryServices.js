@@ -1,9 +1,11 @@
 import axiosProvider from "@/data/providers/axiosProvider";
-
+import store from "@/store/index";
 class CountryServices {
   async getAllCountries() {
-    const response = await axiosProvider.getRequest("get-all-countries");
-    console.log(response);
+    const response = await axiosProvider.getRequest(
+      "get-all-countries",
+      store.state.token
+    );
     return response;
   }
 
@@ -12,17 +14,27 @@ class CountryServices {
     formData.append("name", name);
     formData.append("name_ar", nameAr);
     formData.append("flag_icon", file);
-    const response = await axiosProvider.postRequest("add-country", formData);
+    const response = await axiosProvider.postRequest(
+      "add-country",
+      formData,
+      store.state.token
+    );
     return response;
   }
 
   async getCountryCities(id) {
-    const response = await axiosProvider.getRequest(`get-country-cities/${id}`);
+    const response = await axiosProvider.getRequest(
+      `get-country-cities/${id}`,
+      store.state.token
+    );
     return response;
   }
 
   async getCityProvinces(id) {
-    const response = await axiosProvider.getRequest(`get-city-provinces/${id}`);
+    const response = await axiosProvider.getRequest(
+      `get-city-provinces/${id}`,
+      store.state.token
+    );
     return response;
   }
 }

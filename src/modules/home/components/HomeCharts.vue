@@ -37,8 +37,9 @@ export default {
     };
   },
   async mounted() {
+    const token = this.$store.state.token;
     this.isLoading = true;
-    const response = await axiosProvider.getRequest("home", "");
+    const response = await axiosProvider.getRequest("home", token);
     this.noHospital = response["hospital_number"];
     this.noUser = response["user_number"];
     this.noDoctor = response["doctor_number"];

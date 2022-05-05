@@ -17,6 +17,10 @@ export default {
       this.isLoading = !this.isLoading;
     },
 
+    goToCreateSlide() {
+      this.$router.push("/slide/create");
+    },
+
     async getAllSlides() {
       this.toggleIsLoading();
       const response = await slidesServices.getAllSlides();

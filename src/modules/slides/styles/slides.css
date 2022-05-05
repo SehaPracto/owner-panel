@@ -46,9 +46,54 @@
 }
 
 .slide-edit-modal {
+  padding: 50px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.slide-edit-img {
+  margin: auto auto;
+  height: 150px;
+}
+
+.slide-edit-img-con {
+  position: relative;
+}
+
+.update-btn {
+  color: #fff;
+  background: #3f4394;
+  height: 40px;
+  width: 150px;
+  border-radius: 15px;
+  border: none;
+  margin: auto auto;
+}
+
+.update-btn:hover {
+  background-color: #4ab9b1;
+}
+
+.edit-icon {
+  position: absolute;
+  left: 55%;
+  top: 0;
+  cursor: pointer;
+}
+
+.create-slide-btn {
+  color: #fff;
+  background: #3f4394;
+  font-size: 18px;
+  text-align: center;
+  height: 50px;
+  width: 150px;
+  border-radius: 15px;
+  border: none;
+}
+.create-slide-btn:hover {
+  background: #4ab9b1;
 }

@@ -16,6 +16,11 @@ const routes = [
     name: "slide",
     component: () => import("@/modules/slides/components/EditSlide.vue"),
   },
+  {
+    path: "/slide/create",
+    name: "createSlide",
+    component: () => import("@/modules/slides/views/CreateSlide.vue"),
+  },
 ];
 
 const router = createRouter({

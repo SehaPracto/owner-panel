@@ -1,13 +1,12 @@
 <template>
   <div class="slide-edit-modal">
-    <Loader v-if="isLoading" />
-    <div class="row" v-else>
+    <div class="row">
       <div class="slide-edit-img-con">
         <img
           ref="display-img"
           class="slide-edit-img"
-          :src="slide.img"
-          :alt="slide.name"
+          src="@/assets/logo.png"
+          alt=""
         />
         <i class="fas fa-edit edit-icon" @click="openImagePicker"></i>
         <input
@@ -21,26 +20,21 @@
         class="input-text"
         type="text"
         placeholder="Title"
-        v-model="slide.name"
+        v-model="name"
       />
       <input
         class="input-text"
         type="text"
         placeholder="Duration"
-        v-model="slide.duration"
+        v-model="duration"
       />
       <input
         class="input-text"
         type="text"
         placeholder="Contact"
-        v-model="slide.contact"
+        v-model="contact"
       />
-      <input
-        class="input-text"
-        type="text"
-        placeholder="Contact"
-        v-model="slide.link"
-      />
+      <input class="input-text" type="text" placeholder="Link" v-model="link" />
 
       <textarea
         class="input-text"
@@ -50,14 +44,14 @@
         rows="10"
         style="resize: none"
         placeholder="Description"
-        v-model="slide.description"
+        v-model="description"
       ></textarea>
-      <button class="update-btn" @click="updateSlide">Update</button>
+      <button class="update-btn" @click="createSlide">Create</button>
     </div>
   </div>
 </template>
 
-<script src="../scripts/editSlideScript">
+<script src="../scripts/createSlideScript">
 </script>
 
 <style>

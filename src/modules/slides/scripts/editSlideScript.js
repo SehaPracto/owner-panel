@@ -11,6 +11,7 @@ export default {
       id: 0,
       isLoading: false,
       slide: [],
+      file: null,
     };
   },
   methods: {
@@ -28,8 +29,29 @@ export default {
       await this.getSlideId();
       const response = await slidesServices.getSlide(this.id);
       this.slide = response["slide"];
-      console.log(response);
       this.toggleIsLoading();
+    },
+
+    async updateSlide() {
+      const response = await slidesServices.updateSlide(
+        this.slide.id,
+        this.slide.name,
+        this.slide.duration,
+        this.slide.description,
+        this.slide.contact,
+        this.slide.link,
+        this.file
+      );
+      console.log(response);
+    },
+
+    openImagePicker() {
+      this.$refs["img-picker-ref"].click();
+    },
+    pickImage(event) {
+      this.file = event.target.files[0];
+      this.$refs["display-img"].src = URL.createObjectURL(this.file);
+      console.log(this.$refs["display-img"].src);
     },
   },
   async mounted() {

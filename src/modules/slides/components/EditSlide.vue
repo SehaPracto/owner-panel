@@ -1,7 +1,8 @@
 <template>
   <div class="slide-edit-modal">
-    <div class="row">
-      <h1>modal</h1>
+    <Loader v-if="isLoading" />
+    <div class="row" v-else>
+      <h1>Slide</h1>
     </div>
   </div>
 </template>

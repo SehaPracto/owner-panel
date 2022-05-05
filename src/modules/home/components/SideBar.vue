@@ -37,7 +37,15 @@ export default {
   methods: {
     changeDisplayComponent(componentName) {
       this.$emit("changeDisplayComponent", componentName);
+      this.setLastOpenTab(componentName);
     },
+    setLastOpenTab(tab) {
+      localStorage.setItem("lastTab", tab);
+    },
+  },
+  mounted() {
+    const currentTab = localStorage.getItem("lastTab") ?? "HomeCharts";
+    this.changeDisplayComponent(currentTab);
   },
 };
 </script>

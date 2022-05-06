@@ -16,6 +16,14 @@ class DoctorServices {
     );
     return response;
   }
+
+  async getDoctorProfile(id) {
+    const response = await axiosProvider.getRequest(
+      `doctor/${id}`,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const doctorServices = new DoctorServices();

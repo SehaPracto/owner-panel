@@ -16,6 +16,10 @@ export default {
       this.isLoading = !this.isLoading;
     },
 
+    goToDoctorProfile(id) {
+      this.$router.push(`/doctor/${id}`);
+    },
+
     async toggleActiveTab() {
       this.toggleIsLoading();
       this.tab = "active";

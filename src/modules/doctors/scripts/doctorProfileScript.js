@@ -26,6 +26,7 @@ export default {
       return this.$route.params.id;
     },
     async getDoctorProfile() {
+      this.setActiveTab(0);
       this.toggleIsLoading();
       const id = this.getDoctorIdFromUrlParam();
       const response = await doctorServices.getDoctorProfile(id);

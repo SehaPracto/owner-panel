@@ -45,7 +45,11 @@
       <div class="row">
         <div class="col-md-3">
           <button
-            :class="activeTab == 0 ? 'doctor-profile-active-tab' : 'tab'"
+            :class="
+              activeTab == 0
+                ? 'doctor-profile-active-tab'
+                : 'doctor-profile-tab'
+            "
             @click="setActiveTab(0)"
           >
             Appointments
@@ -53,8 +57,11 @@
         </div>
         <div class="col-md-3">
           <button
-            class="tab"
-            :class="activeTab == 1 ? 'doctor-profile-active-tab' : 'tab'"
+            :class="
+              activeTab == 1
+                ? 'doctor-profile-active-tab'
+                : 'doctor-profile-tab'
+            "
             @click="setActiveTab(1)"
           >
             Work Locations
@@ -62,8 +69,11 @@
         </div>
         <div class="col-md-3">
           <button
-            class="tab"
-            :class="activeTab == 2 ? 'doctor-profile-active-tab' : 'tab'"
+            :class="
+              activeTab == 2
+                ? 'doctor-profile-active-tab'
+                : 'doctor-profile-tab'
+            "
             @click="setActiveTab(2)"
           >
             Medical Degrees
@@ -71,8 +81,11 @@
         </div>
         <div class="col-md-3">
           <button
-            class="tab"
-            :class="activeTab == 3 ? 'doctor-profile-active-tab' : 'tab'"
+            :class="
+              activeTab == 3
+                ? 'doctor-profile-active-tab'
+                : 'doctor-profile-tab'
+            "
             @click="setActiveTab(3)"
           >
             Working time
@@ -133,16 +146,16 @@
         </table>
       </div>
       <div class="col-md-12" v-show="activeTab == 2">
-        <div class="row" style="padding: 10px">
+        <div class="row" style="padding: 50px">
           <div
             class="col-md-4"
             v-for="mDegree in medicalDegree"
             :key="mDegree.id"
           >
             <img
-              height="75"
-              width="75"
-              style="margin: auto auto"
+              height="150"
+              width="150"
+              style="margin: auto auto; border-radius: 15px"
               :src="mDegree.img"
               alt=""
             />

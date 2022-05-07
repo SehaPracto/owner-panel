@@ -39,6 +39,18 @@ const routes = [
     },
   },
   {
+    path: "/hcp/:id",
+    name: "hcp-profile",
+    component: () => import("../modules/hcps/views/HcpProfile.vue"),
+    beforeEnter: (to, from, next) => {
+      if (to.name == "hcp-profile" && !createStore.state.token) {
+        next("/");
+      } else {
+        next();
+      }
+    },
+  },
+  {
     path: "/slide/:id",
     name: "slide",
     component: () => import("@/modules/slides/components/EditSlide.vue"),

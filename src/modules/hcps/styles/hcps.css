@@ -23,3 +23,53 @@
   color: white;
   border-radius: 10px;
 }
+
+.profile-btn {
+  height: 40px;
+  width: 150px;
+  color: #fff;
+  font-weight: bold;
+  background: #3f4394;
+  border-radius: 10px;
+}
+
+.profile-btn {
+  height: 40px;
+  width: 150px;
+  color: #fff;
+  font-weight: bold;
+  background: #3f4394;
+  border-radius: 10px;
+}
+
+.hcp-profile-img {
+  height: 200px;
+  width: 200px;
+  margin: 20px auto;
+  border-radius: 15px;
+}
+
+.profile {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hcp-profile-tab {
+  background: #fff;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.hcp-profile-active-tab {
+  background: #3f4394;
+  color: #fff;
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+}

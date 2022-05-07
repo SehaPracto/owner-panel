@@ -17,6 +17,10 @@ export default {
       this.isLoading = !this.isLoading;
     },
 
+    goToHcpProfile(id) {
+      this.$router.push(`/hcp/${id}`);
+    },
+
     async toggleActiveTab() {
       this.toggleIsLoading();
       this.tab = "active";

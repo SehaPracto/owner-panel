@@ -24,6 +24,7 @@
           <th scope="col">Name</th>
           <th scope="col">Specialty</th>
           <th scope="col">Phone</th>
+          <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody>
@@ -32,6 +33,11 @@
           <td>{{ hcp.first_name }} {{ hcp.last_name }}</td>
           <td>{{ hcp.specialty.name }}</td>
           <td>{{ hcp.phone }}</td>
+          <td>
+            <button class="profile-btn" @click="goToHcpProfile(hcp.id)">
+              Profile
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

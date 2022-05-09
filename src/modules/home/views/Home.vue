@@ -18,6 +18,8 @@ import Slides from "@/modules/slides/views/Slides.vue";
 import Countries from "@/modules/countries/views/Countries.vue";
 import Doctors from "@/modules/doctors/views/Doctors.vue";
 import Hcps from "@/modules/hcps/views/Hcps.vue";
+import HcpAppointments from "@/modules/hcp_appointment/views/HcpAppointments.vue";
+import DoctorAppointments from "@/modules/doctor_appointment/views/DoctorAppointments.vue";
 import axiosProvider from "@/data/providers/axiosProvider";
 export default {
   components: {
@@ -29,6 +31,8 @@ export default {
     Countries,
     Doctors,
     Hcps,
+    HcpAppointments,
+    DoctorAppointments,
   },
   data() {
     return {

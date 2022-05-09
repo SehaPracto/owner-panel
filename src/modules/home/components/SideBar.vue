@@ -23,7 +23,19 @@
         <i class="fas fa-stethoscope"></i> Doctors
       </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Hcps')">
-        <i class="fas fa-syringe"></i> Health Care Providers
+        <i class="fas fa-syringe"></i> HCPs
+      </li>
+      <li
+        class="side-bar-item"
+        @click="changeDisplayComponent('DoctorAppointments')"
+      >
+        <i class="fas fa-syringe"></i> Doctorss' Appointments
+      </li>
+      <li
+        class="side-bar-item"
+        @click="changeDisplayComponent('HcpAppointments')"
+      >
+        <i class="fas fa-syringe"></i> HCPs' Appointments
       </li>
       <li class="side-bar-item logout-btn" @click="logout">
         <i class="fas fa-sign-out-alt"></i> Logout

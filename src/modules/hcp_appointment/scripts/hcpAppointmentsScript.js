@@ -18,9 +18,7 @@ export default {
       this.toggleIsLoading();
       this.tab = "approved";
       const response = await hcpAppointmentsServices.getApprovedAppointments();
-      console.log(response);
       this.appointments = response["appointments"];
-      console.log(this.appointments);
       this.toggleIsLoading();
     },
 
@@ -28,9 +26,7 @@ export default {
       this.toggleIsLoading();
       this.tab = "pending";
       const response = await hcpAppointmentsServices.getPendingAppointments();
-      console.log(response);
       this.appointments = response["appointments"];
-      console.log(this.appointments);
       this.toggleIsLoading();
     },
   },

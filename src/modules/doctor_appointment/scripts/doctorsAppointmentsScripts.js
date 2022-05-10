@@ -19,7 +19,6 @@ export default {
       this.tab = "approved";
       const response =
         await doctorsAppointmentsServices.getApprovedAppointments();
-      console.log(response);
       this.appointments = response["appointments"];
       this.toggleIsLoading();
     },
@@ -28,7 +27,6 @@ export default {
       this.tab = "pending";
       const response =
         await doctorsAppointmentsServices.getPendingAppointments();
-      console.log(response);
       this.appointments = response["appointments"];
       this.toggleIsLoading();
     },

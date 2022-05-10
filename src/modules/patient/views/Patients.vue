@@ -1,6 +1,6 @@
 <template>
   <div class="patients">
-    <h1>Patients</h1>
+    <h1>Patients.....Coming soon</h1>
   </div>
 </template>
 

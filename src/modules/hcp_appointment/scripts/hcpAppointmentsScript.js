@@ -10,13 +10,32 @@ export default {
     };
   },
   methods: {
-    toggleApprovedTab() {
-      this.tab = "approved";
+    toggleIsLoading() {
+      this.isLoading = !this.isLoading;
     },
-    togglePendingTab() {
+
+    async toggleApprovedTab() {
+      this.toggleIsLoading();
+      this.tab = "approved";
+      const response = await hcpAppointmentsServices.getApprovedAppointments();
+      console.log(response);
+      this.appointments = response["appointments"];
+      console.log(this.appointments);
+      this.toggleIsLoading();
+    },
+
+    async togglePendingTab() {
+      this.toggleIsLoading();
       this.tab = "pending";
+      const response = await hcpAppointmentsServices.getPendingAppointments();
+      console.log(response);
+      this.appointments = response["appointments"];
+      console.log(this.appointments);
+      this.toggleIsLoading();
     },
   },
 
-  async mounted() {},
+  async mounted() {
+    await this.togglePendingTab();
+  },
 };

@@ -11,13 +11,30 @@ export default {
     };
   },
   methods: {
-    toggleApprovedTab() {
-      this.tab = "approved";
+    toggleIsLoading() {
+      this.isLoading = !this.isLoading;
     },
-    togglePendingTab() {
+    async toggleApprovedTab() {
+      this.toggleIsLoading();
+      this.tab = "approved";
+      const response =
+        await doctorsAppointmentsServices.getApprovedAppointments();
+      console.log(response);
+      this.appointments = response["appointments"];
+      this.toggleIsLoading();
+    },
+    async togglePendingTab() {
+      this.toggleIsLoading();
       this.tab = "pending";
+      const response =
+        await doctorsAppointmentsServices.getPendingAppointments();
+      console.log(response);
+      this.appointments = response["appointments"];
+      this.toggleIsLoading();
     },
   },
 
-  async mounted() {},
+  async mounted() {
+    await this.togglePendingTab();
+  },
 };

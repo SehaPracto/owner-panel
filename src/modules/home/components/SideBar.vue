@@ -29,7 +29,7 @@
         class="side-bar-item"
         @click="changeDisplayComponent('DoctorAppointments')"
       >
-        <i class="fas fa-syringe"></i> Doctorss' Appointments
+        <i class="fas fa-syringe"></i> Doctors' Appointments
       </li>
       <li
         class="side-bar-item"

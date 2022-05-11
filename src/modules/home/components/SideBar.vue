@@ -13,6 +13,12 @@
       <li class="side-bar-item" @click="changeDisplayComponent('Slides')">
         <i class="fas fa-ad"></i> Slides
       </li>
+      <li
+        class="side-bar-item"
+        @click="changeDisplayComponent('NotificationCenter')"
+      >
+        <i class="fas fa-bell"></i> Notifications Center
+      </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Countries')">
         <i class="fas fa-globe"></i> Countries
       </li>
@@ -29,13 +35,13 @@
         class="side-bar-item"
         @click="changeDisplayComponent('DoctorAppointments')"
       >
-        <i class="fas fa-syringe"></i> Doctors' Appointments
+        <i class="fas fa-calendar"></i> Doctors' Appointments
       </li>
       <li
         class="side-bar-item"
         @click="changeDisplayComponent('HcpAppointments')"
       >
-        <i class="fas fa-syringe"></i> HCPs' Appointments
+        <i class="fas fa-calendar"></i> HCPs' Appointments
       </li>
       <li class="side-bar-item logout-btn" @click="logout">
         <i class="fas fa-sign-out-alt"></i> Logout
@@ -74,14 +80,18 @@ export default {
   background: #3f4394;
   height: 100%;
   width: 250px;
-  padding: 100px 15px;
+  padding: 40px 15px;
 }
 .side-bar-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding-left: 0;
 }
 .side-bar-item {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
   padding: 15px 0;
   display: flex;
   align-items: center;
@@ -109,7 +119,7 @@ export default {
   }
   .side-bar-item {
     color: white;
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 </style>

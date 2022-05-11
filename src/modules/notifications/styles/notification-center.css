@@ -1,0 +1,39 @@
+.custom-form {
+  display: flex;
+  flex-direction: column;
+}
+.input-text {
+  font-size: 18px;
+}
+.form-card {
+  padding: 50px;
+  margin: auto auto;
+  width: 50%;
+  box-shadow: 1px 1px 1px 1px #d3d3d3;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+.prim-btn {
+  margin: 25px auto;
+}
+
+.form-select {
+  width: 250px;
+  margin: 15px auto;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .input-text {
+    width: 90%;
+  }
+  .form-card {
+    margin: auto auto;
+    width: 100%;
+    padding: 20px;
+  }
+  .form-select {
+    width: 175px;
+    margin: 15px auto;
+  }
+}

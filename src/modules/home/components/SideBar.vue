@@ -114,12 +114,12 @@ export default {
 
 @media screen and (max-width: 700px) {
   .side-bar {
-    width: 150px;
+    width: 120px;
     padding: 100px 15px;
   }
   .side-bar-item {
     color: white;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 </style>

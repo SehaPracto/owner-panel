@@ -92,7 +92,7 @@ export default {
 .side-bar-item {
   color: white;
   font-size: 16px;
-  padding: 15px 0;
+  padding: 10px 0;
   display: flex;
   align-items: center;
 }

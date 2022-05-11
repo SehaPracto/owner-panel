@@ -86,7 +86,7 @@ export default {
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   padding-left: 0;
 }
 .side-bar-item {

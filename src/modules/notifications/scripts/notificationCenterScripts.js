@@ -15,5 +15,11 @@ export default {
       this.isSending = !this.isSending;
     },
     setType() {},
+    async sendNotification() {
+      const response = notificationsServices.sendNotification(
+        this.title,
+        this.context
+      );
+    },
   },
 };

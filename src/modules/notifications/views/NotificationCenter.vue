@@ -3,7 +3,7 @@
     <h1 class="text-center">Notifications Center</h1>
     <div class="card form-card">
       <div class="row">
-        <form class="custom-form">
+        <form class="custom-form" @submit.prevent="sendNotification">
           <select class="form-select" aria-label="Default select example">
             <option value="general" selected>Choose targeted audiance</option>
             <option value="general">All</option>
@@ -11,7 +11,12 @@
             <option value="drs">Doctors</option>
             <option value="hcps">HCPs</option>
           </select>
-          <input class="input-text" type="text" placeholder="Title" />
+          <input
+            class="input-text"
+            type="text"
+            placeholder="Title"
+            v-model="title"
+          />
           <textarea
             class="input-text"
             name=""
@@ -20,8 +25,9 @@
             rows="10"
             style="resize: none"
             placeholder="Context"
+            v-model="context"
           ></textarea>
-          <button class="prim-btn">Send</button>
+          <input type="submit" class="prim-btn" value="Send" />
         </form>
       </div>
     </div>

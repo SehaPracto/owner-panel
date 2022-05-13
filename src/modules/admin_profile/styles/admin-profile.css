@@ -45,6 +45,38 @@
   font-size: 20px;
   cursor: pointer;
 }
+.active-admin-status {
+  width: 200px;
+  height: 40px;
+  background: #72ff72;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.active-admin-status p {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin: auto auto;
+}
+.non-active-admin-status {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  border-radius: 10px;
+  background: #fa6d6d;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.non-active-admin-status p {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin: auto auto;
+}
 @media screen and (max-width: 700px) {
   .input-text {
     width: 80%;

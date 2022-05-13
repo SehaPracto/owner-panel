@@ -14,7 +14,7 @@
         alt=""
         ref="profile-img"
       />
-      <i class="fas fa-edit edit-btn" @click="openFilePicker"></i>
+      <i class="fas fa-edit edit-btn-profile-img" @click="openFilePicker"></i>
       <input
         type="file"
         style="display: none"

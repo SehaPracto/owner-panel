@@ -7,7 +7,7 @@
       <div class="col-md-4 slide-row-con">
         <p class="slide-row-con-title">{{ name }}</p>
       </div>
-      <div class="col-md-6 slide-row-con text-center">
+      <div class="col-md-4 slide-row-con text-center">
         <button class="custom-btn edit-btn">Edit</button>
       </div>
     </div>

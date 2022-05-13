@@ -1,0 +1,23 @@
+.slide-row {
+  border: 1px solid #d3d3d3;
+  margin: 10px auto;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.slide-row-img {
+  height: 75px;
+  width: 75px;
+  margin: auto auto;
+}
+
+.slide-row-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-row-con-title {
+  font-size: 14px;
+}

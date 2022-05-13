@@ -26,6 +26,7 @@ import Hcps from "@/modules/hcps/views/Hcps.vue";
 import HcpAppointments from "@/modules/hcp_appointment/views/HcpAppointments.vue";
 import DoctorAppointments from "@/modules/doctor_appointment/views/DoctorAppointments.vue";
 import NotificationCenter from "@/modules/notifications/views/NotificationCenter.vue";
+import Specialties from "@/modules/specialties/views/Specialties.vue";
 import axiosProvider from "@/data/providers/axiosProvider";
 export default {
   components: {
@@ -40,6 +41,7 @@ export default {
     HcpAppointments,
     DoctorAppointments,
     NotificationCenter,
+    Specialties,
   },
   data() {
     return {

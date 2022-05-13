@@ -25,6 +25,9 @@
       <li class="side-bar-item" @click="changeDisplayComponent('Patients')">
         <i class="fas fa-user"></i> Patients
       </li>
+      <li class="side-bar-item" @click="changeDisplayComponent('Specialties')">
+        <i class="fas fa-user-tag"></i> Specialties
+      </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Doctors')">
         <i class="fas fa-stethoscope"></i> Doctors
       </li>

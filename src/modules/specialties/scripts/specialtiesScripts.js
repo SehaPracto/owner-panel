@@ -46,6 +46,6 @@ export default {
     },
   },
   async mounted() {
-    await this.getAllDoctorSpecialties();
+    await this.toggleDoctorView();
   },
 };

@@ -18,7 +18,7 @@ export default {
   margin: 25px auto;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 .top-bar-title {

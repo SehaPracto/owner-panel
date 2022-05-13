@@ -1,0 +1,41 @@
+.create-department-btn {
+  color: #fff;
+  background: #3f4394;
+  font-size: 18px;
+  text-align: center;
+  height: 50px;
+  width: 150px;
+  border-radius: 15px;
+  border: none;
+}
+.create-department-btn:hover {
+  background: #4ab9b1;
+}
+.add-department-con {
+  position: relative;
+  width: 35%;
+}
+.add-department-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50px;
+  right: 0;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  background: white;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  z-index: 100;
+}
+.input-text {
+  width: 90%;
+}
+
+@media only screen and (max-width: 700px) {
+  .add-department-con {
+    width: 80%;
+  }
+}

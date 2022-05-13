@@ -78,7 +78,7 @@ export default {
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .profile-btn {
   border-radius: 50%;

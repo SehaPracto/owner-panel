@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-12 slide-row">
+  <div class="col-md-6 slide-row">
     <div class="row">
       <div class="col-md-2">
         <img class="slide-row-img" :src="img" alt="slide" />

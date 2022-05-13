@@ -16,13 +16,16 @@ export default {
       this.isLoading = !this.isLoading;
     },
     async getAllDoctorSpecialties() {
+      this.toggleIsLoading();
       const response = await specialtiesServices.getDoctorSpecialties();
       this.specialties = response["specialties"];
-      console.log(response);
+      this.toggleIsLoading();
     },
     async getAllHcpSpecialties() {
+      this.toggleIsLoading();
       const response = await specialtiesServices.getHcpSpecialties();
       this.specialties = response["specialties"];
+      this.toggleIsLoading();
     },
   },
   async mounted() {

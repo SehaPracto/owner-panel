@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <div class="row">
+    <Loader v-if="isLoading" />
+    <div class="row" v-else>
       <SpecialtyRow
         v-for="specialty in specialties"
         :key="specialty.id"

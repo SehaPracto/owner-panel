@@ -12,8 +12,25 @@ export default {
     };
   },
   methods: {
+    handleSpecialtyChange() {
+      this.currentView = this.$refs.specialty.value;
+      console.log(this.currentView);
+      if (this.currentView == "hcp") {
+        this.toggleHcpView();
+      } else {
+        this.toggleDoctorView();
+      }
+    },
     toggleIsLoading() {
       this.isLoading = !this.isLoading;
+    },
+    async toggleDoctorView() {
+      this.currentView = "doctor";
+      await this.getAllDoctorSpecialties();
+    },
+    async toggleHcpView() {
+      this.currentView = "hcp";
+      await this.getAllHcpSpecialties();
     },
     async getAllDoctorSpecialties() {
       this.toggleIsLoading();

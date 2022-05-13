@@ -1,5 +1,14 @@
 <template>
   <div class="container">
+    <select
+      ref="specialty"
+      class="form-select"
+      aria-label="Default select example"
+      @change="handleSpecialtyChange"
+    >
+      <option value="doctor">Doctors</option>
+      <option value="hcp">HCPs</option>
+    </select>
     <Loader v-if="isLoading" />
     <div class="row" v-else>
       <SpecialtyRow

@@ -1,5 +1,8 @@
 <template>
   <div class="container">
+    <button class="create-department-btn">
+      <i class="fas fa-plus"></i> Add Admin
+    </button>
     <div class="add-department-con">
       <button
         class="create-department-btn"
@@ -22,35 +25,53 @@
             @click="toggleIsShowCreateDepartmentModal(false)"
           ></i>
         </div>
-        <input class="input-text" type="text" placeholder="Department Name" />
-        <button class="prim-btn">Create</button>
+        <input
+          class="input-text"
+          type="text"
+          placeholder="Department Name"
+          v-model="departmentName"
+        />
+        <button class="prim-btn" @click="createDepartment">Create</button>
       </div>
     </div>
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Choose Department</option>
+    <select
+      ref="department"
+      @change="handleChange"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option selected value="0">Choose Department</option>
+      <option
+        v-for="department in departments"
+        :key="department.id"
+        :value="department.id"
+      >
+        {{ department.name }}
+      </option>
     </select>
-    <table class="table">
+    <Loader style="height: 150px" v-if="isLoading" />
+    <table class="table" v-else>
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">Phone</th>
           <th scope="col">Email</th>
+          <th scope="col">Status</th>
           <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody>
-        <!-- <tr v-for="(hcp, index) in hcps" :key="hcp.id">
+        <tr v-for="(admin, index) in admins" :key="admin.id">
           <th scope="row">{{ index + 1 }}</th>
-          <td>{{ hcp.first_name }} {{ hcp.last_name }}</td>
-          <td>{{ hcp.specialty.name }}</td>
-          <td>{{ hcp.phone }}</td>
+          <td>{{ admin.name }}</td>
+          <td>{{ admin.email }}</td>
+          <td>{{ admin.phone }}</td>
+          <td>{{ admin.is_active ? "Active" : "Inactive" }}</td>
           <td>
-            <button class="profile-btn" @click="goToHcpProfile(hcp.id)">
-              Profile
-            </button>
+            <button class="profile-btn">Profile</button>
           </td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
   </div>

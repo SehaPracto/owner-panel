@@ -45,8 +45,8 @@ export default {
       const response = await humanResourcesServices.createDepartment(
         this.departmentName
       );
-      console.log(response);
       this.toggleIsShowCreateDepartmentModal(false);
+      this.departments.push(response["department"]);
     },
   },
   async mounted() {

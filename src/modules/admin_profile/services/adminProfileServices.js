@@ -21,6 +21,17 @@ class AdminProfileServices {
     );
     return response;
   }
+  async changePassword(oldPassword, newPassword) {
+    const formData = new FormData();
+    formData.append("password", newPassword);
+    formData.append("old_password", oldPassword);
+    const response = await axiosProvider.postRequest(
+      "admin-change-password",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const adminProfileServices = new AdminProfileServices();

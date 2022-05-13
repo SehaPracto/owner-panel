@@ -27,10 +27,17 @@
         >
           Finances
         </button>
+        <button
+          :class="currentTab == 'password' ? 'active-tab' : 'tab'"
+          @click="chooseTab('password')"
+        >
+          Change Password
+        </button>
       </div>
 
       <AdminProfilePersonalInfoTab v-if="currentTab == 'personal-info'" />
       <AdminProfileInboxTab v-if="currentTab == 'inbox'" />
+      <AdminProfileChangePasswordTab v-if="currentTab == 'password'" />
     </div>
   </div>
 </template>

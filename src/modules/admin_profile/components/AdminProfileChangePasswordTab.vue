@@ -23,11 +23,12 @@
         v-model="confirmNewPassword"
       />
       <input class="prim-btn" type="submit" value="Change" />
+      <p>{{ errorMsg }}</p>
     </form>
   </div>
 </template>
 
-<script>
+<script src="../scripts/adminProfileChangePasswordScripts.js">
 </script>
 
 <style>

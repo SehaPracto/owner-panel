@@ -75,6 +75,18 @@ const routes = [
     },
   },
   {
+    path: "/profile",
+    name: "admin-profile",
+    component: () => import("@/modules/admin_profile/views/MyProfile.vue"),
+    beforeEnter: (to, from, next) => {
+      if (to.name == "admin-profile" && !createStore.state.token) {
+        next("/");
+      } else {
+        next();
+      }
+    },
+  },
+  {
     path: "/:catchAll(.*)",
     name: "NotFound",
     component: () => import("@/components/PageNotFound.vue"),

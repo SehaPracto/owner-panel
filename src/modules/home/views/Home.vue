@@ -4,6 +4,11 @@
       <SideBar @changeDisplayComponent="routeClick" />
     </div>
     <div class="right-con">
+      <div class="navbar">
+        <button class="profile-btn" @click="$router.push('/profile')">
+          <i class="fas fa-user-alt"></i>
+        </button>
+      </div>
       <h1><component v-bind:is="component"></component></h1>
     </div>
   </div>
@@ -70,10 +75,29 @@ export default {
   padding: 20px;
   position: relative;
 }
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+.profile-btn {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background: #d3d3d3;
+}
+.profile-btn:hover {
+  background: #3f4394;
+}
 
 @media screen and (min-width: 300px) and (max-width: 700px) {
   .right-con {
     margin-left: 80px;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 }
 

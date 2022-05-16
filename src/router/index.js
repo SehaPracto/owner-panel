@@ -19,7 +19,6 @@ const routes = [
     name: "home",
     component: () => import("../modules/home/views/Home.vue"),
     beforeEnter: (to, from, next) => {
-      console.log(JSON.parse(createStore.getters.getAdmin));
       if (to.name == "home" && !createStore.state.token) {
         next("/");
       } else {
@@ -68,7 +67,12 @@ const routes = [
     name: "createSlide",
     component: () => import("@/modules/slides/views/CreateSlide.vue"),
     beforeEnter: (to, from, next) => {
-      if (to.name == "createSlide" && !createStore.state.token) {
+      const admin = JSON.parse(createStore.getters.getAdmin);
+      console.log(admin.can_add_slide);
+      if (
+        to.name == "createSlide" &&
+        (!createStore.state.token || !admin.can_add_slide)
+      ) {
         next("/");
       } else {
         next();

@@ -19,6 +19,7 @@ const routes = [
     name: "home",
     component: () => import("../modules/home/views/Home.vue"),
     beforeEnter: (to, from, next) => {
+      console.log(JSON.parse(createStore.getters.getAdmin));
       if (to.name == "home" && !createStore.state.token) {
         next("/");
       } else {

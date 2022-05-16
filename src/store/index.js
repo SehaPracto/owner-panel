@@ -4,11 +4,12 @@ export default createStore({
   state: {
     isLogin: localStorage.getItem("isLogin") ?? false,
     token: localStorage.getItem("token") ?? "",
-    admin: localStorage.getItem("admin"),
+    admin: localStorage.getItem("admin") ?? {},
   },
   getters: {
     getIsLogin: (state) => state.isLogin,
     getToken: (state) => state.token,
+    getAdmin: (state) => state.admin,
   },
   mutations: {
     login(state, token) {
@@ -16,6 +17,10 @@ export default createStore({
       localStorage.setItem("token", token);
       state.isLogin = localStorage.getItem("isLogin") ?? false;
       state.token = localStorage.getItem("token") ?? "";
+    },
+    setAdmin(state, admin) {
+      state.admin = admin;
+      localStorage.setItem("admin", JSON.stringify(admin));
     },
     logout(state) {
       state.token = "";

@@ -4,6 +4,7 @@ export default createStore({
   state: {
     isLogin: localStorage.getItem("isLogin") ?? false,
     token: localStorage.getItem("token") ?? "",
+    admin: localStorage.getItem("admin"),
   },
   getters: {
     getIsLogin: (state) => state.isLogin,
@@ -19,8 +20,10 @@ export default createStore({
     logout(state) {
       state.token = "";
       state.isLogin = false;
+      state.admin = {};
       localStorage.setItem("isLogin", false);
       localStorage.setItem("token", "");
+      localStorage.setItem("admin", "");
     },
   },
   actions: {},

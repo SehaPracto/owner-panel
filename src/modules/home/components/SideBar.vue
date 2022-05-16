@@ -5,21 +5,31 @@
         <i class="fas fa-home"></i> Home
       </li>
       <li
+        v-if="admin.can_add_admin"
         class="side-bar-item"
         @click="changeDisplayComponent('HumanResources')"
       >
         <i class="fas fa-briefcase"></i> Human Resources
       </li>
-      <li class="side-bar-item" @click="changeDisplayComponent('Slides')">
+      <li
+        v-if="admin.can_read_slide"
+        class="side-bar-item"
+        @click="changeDisplayComponent('Slides')"
+      >
         <i class="fas fa-ad"></i> Slides
       </li>
       <li
+        v-if="admin.can_view_notification"
         class="side-bar-item"
         @click="changeDisplayComponent('NotificationCenter')"
       >
         <i class="fas fa-bell"></i> Notifications Center
       </li>
-      <li class="side-bar-item" @click="changeDisplayComponent('Countries')">
+      <li
+        v-if="admin.can_view_country"
+        class="side-bar-item"
+        @click="changeDisplayComponent('Countries')"
+      >
         <i class="fas fa-globe"></i> Countries
       </li>
       <li class="side-bar-item" @click="changeDisplayComponent('Patients')">
@@ -28,19 +38,29 @@
       <li class="side-bar-item" @click="changeDisplayComponent('Specialties')">
         <i class="fas fa-user-tag"></i> Specialties
       </li>
-      <li class="side-bar-item" @click="changeDisplayComponent('Doctors')">
+      <li
+        v-if="admin.can_view_doctor"
+        class="side-bar-item"
+        @click="changeDisplayComponent('Doctors')"
+      >
         <i class="fas fa-stethoscope"></i> Doctors
       </li>
-      <li class="side-bar-item" @click="changeDisplayComponent('Hcps')">
+      <li
+        v-if="admin.can_view_hcp"
+        class="side-bar-item"
+        @click="changeDisplayComponent('Hcps')"
+      >
         <i class="fas fa-syringe"></i> HCPs
       </li>
       <li
+        v-if="admin.can_view_doctor"
         class="side-bar-item"
         @click="changeDisplayComponent('DoctorAppointments')"
       >
         <i class="fas fa-calendar"></i> Doctors' Appointments
       </li>
       <li
+        v-if="admin.can_view_hcp"
         class="side-bar-item"
         @click="changeDisplayComponent('HcpAppointments')"
       >
@@ -55,6 +75,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      admin: {},
+    };
+  },
   methods: {
     changeDisplayComponent(componentName) {
       this.$emit("changeDisplayComponent", componentName);
@@ -71,6 +96,7 @@ export default {
   mounted() {
     const currentTab = localStorage.getItem("lastTab") ?? "HomeCharts";
     this.changeDisplayComponent(currentTab);
+    this.admin = JSON.parse(localStorage.getItem("admin"));
   },
 };
 </script>

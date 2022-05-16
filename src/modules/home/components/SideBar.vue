@@ -93,10 +93,10 @@ export default {
       this.$router.push("/");
     },
   },
-  mounted() {
+  async mounted() {
     const currentTab = localStorage.getItem("lastTab") ?? "HomeCharts";
     this.changeDisplayComponent(currentTab);
-    this.admin = JSON.parse(localStorage.getItem("admin"));
+    this.admin = await JSON.parse(this.$store.getters.getAdmin);
   },
 };
 </script>

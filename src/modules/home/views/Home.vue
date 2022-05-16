@@ -55,6 +55,11 @@ export default {
   },
   async mounted() {
     console.log("home mounted");
+    const response = await axiosProvider.getRequest(
+      "get-admin",
+      this.$store.getters.getToken
+    );
+    this.$store.commit("setAdmin", response["admin"]);
   },
 };
 </script>

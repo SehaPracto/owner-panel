@@ -19,8 +19,8 @@ export default createStore({
       state.token = localStorage.getItem("token") ?? "";
     },
     setAdmin(state, admin) {
-      state.admin = admin;
       localStorage.setItem("admin", JSON.stringify(admin));
+      state.admin = localStorage.getItem("admin");
     },
     logout(state) {
       state.token = "";

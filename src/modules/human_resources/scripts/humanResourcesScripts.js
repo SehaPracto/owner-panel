@@ -39,7 +39,6 @@ export default {
       }
       const response = await humanResourcesServices.getDepartmentAdmins(id);
       this.admins = response["admins"];
-      console.log(this.admins);
     },
     async createDepartment() {
       const response = await humanResourcesServices.createDepartment(

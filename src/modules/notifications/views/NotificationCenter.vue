@@ -3,8 +3,12 @@
     <h1 class="text-center">Notifications Center</h1>
     <div class="card form-card">
       <div class="row">
-        <form class="custom-form" @submit.prevent="sendNotification">
-          <select class="form-select" aria-label="Default select example">
+        <form class="custom-form" @submit.prevent="handleSubmitNotification">
+          <select
+            @change="setType"
+            class="form-select"
+            aria-label="Default select example"
+          >
             <option value="general" selected>Choose targeted audiance</option>
             <option value="general">All</option>
             <option value="users">Users/Patients</option>

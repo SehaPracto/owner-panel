@@ -6,6 +6,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      isShowNotifModal: false,
       activeTab: 0,
       doctor: [],
       medicalSpecialty: [],
@@ -13,6 +14,8 @@ export default {
       doctorWorkLocation: [],
       appointment: [],
       workingHour: [],
+      notifTitle: "",
+      notifContext: "",
     };
   },
   methods: {
@@ -21,6 +24,9 @@ export default {
     },
     toggleIsLoading() {
       this.isLoading = !this.isLoading;
+    },
+    toggleIsShowNotifModal() {
+      this.isShowNotifModal = !this.isShowNotifModal;
     },
     getDoctorIdFromUrlParam() {
       return this.$route.params.id;
@@ -38,6 +44,18 @@ export default {
       this.appointment = response["doctor"]["appointment"];
       this.workingHour = response["doctor"]["working_hour"];
       this.toggleIsLoading();
+    },
+    async sendNotificationToDoctor() {
+      const response = doctorServices.sendNotificationToDoctor(
+        this,
+        doctor.id,
+        this,
+        notifTitle,
+        this.notifContext
+      );
+      if (this.isShowNotifModal) {
+        this.toggleIsShowNotifModal();
+      }
     },
   },
   async mounted() {

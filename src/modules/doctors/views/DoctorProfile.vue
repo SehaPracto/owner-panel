@@ -2,8 +2,77 @@
   <div class="container profile">
     <Loader v-if="isLoading" />
     <div class="row" v-else>
+      <div class="notif-con">
+        <button class="prim-btn" @click="toggleIsShowNotifModal">
+          Push Notification
+        </button>
+        <div class="notif-modal" v-show="isShowNotifModal">
+          <div class="top-modal-bar">
+            <i
+              class="fas fa-times"
+              style="cursor: pointer"
+              @click="toggleIsShowNotifModal"
+            ></i>
+          </div>
+          <form @submit.prevent="sendNotificationToDoctor">
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Title"
+              required
+              v-model="notifTitle"
+            />
+            <textarea
+              class="input-text"
+              name=""
+              id=""
+              cols="30"
+              rows="3"
+              style="resize: none"
+              placeholder="Context"
+              required
+              v-model="notifContext"
+            ></textarea>
+            <input type="submit" class="prim-btn" value="Send" />
+          </form>
+        </div>
+      </div>
       <div class="col-md-12">
         <img class="doctor-profile-img" :src="doctor.profile_img" alt="" />
+      </div>
+      <div class="actions-con">
+        <div class="action-tab">
+          <p
+            style="color: green; font-weight: bold"
+            v-if="doctor.phone_verified_at"
+          >
+            <i class="fas fa-check"></i>Phone Verified
+          </p>
+          <p style="color: red; font-weight: bold" v-else>
+            <i class="fas fa-exclamation-circle"></i>Phone not verified
+          </p>
+        </div>
+        <div class="action-tab">
+          <p
+            style="color: green; font-weight: bold"
+            v-if="doctor.email_verified_at"
+          >
+            <i class="fas fa-check"></i>Email Verified
+          </p>
+          <p style="color: red; font-weight: bold" v-else>
+            <i class="fas fa-exclamation-circle"></i>Email not verified
+          </p>
+        </div>
+        <div class="action-tab" v-if="!doctor.adress">
+          <p style="color: red; font-weight: bold">
+            <i class="fas fa-exclamation-circle"></i>Adress
+          </p>
+        </div>
+        <div class="action-tab" v-if="workingHour.length < 1">
+          <p style="color: red; font-weight: bold">
+            <i class="fas fa-exclamation-circle"></i>Working hours
+          </p>
+        </div>
       </div>
       <div class="col-md-12">
         <p>
@@ -33,13 +102,9 @@
         <p><i class="fas fa-envelope"></i> {{ doctor.email }}</p>
       </div>
       <div class="col-md-6">
-        <p><i class="fas fa-star"></i> {{ doctor.rating }} / 5</p>
-      </div>
-      <div class="col-md-6">
         <p>
-          {{
-            doctor.email_verified_at ? "Email Verified" : "Email not verified"
-          }}
+          <i class="fas fa-star"></i>
+          {{ doctor.rating }} / 5
         </p>
       </div>
       <div class="row">
@@ -188,5 +253,6 @@
 </script>
 
 <style>
+@import "@/assets/styles/global.css";
 @import "../styles/doctors.css";
 </style>

@@ -2,6 +2,52 @@
   min-height: 100vh;
 }
 
+.notif-con {
+  position: relative;
+}
+
+.notif-modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 45%;
+  background: white;
+  height: 320px;
+  width: 300px;
+  z-index: 100;
+  border: 1px solid #d3d3d3;
+  border-radius: 15px;
+}
+
+.top-modal-bar {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.input-text {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.actions-con {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+}
+
+.action-tab {
+  margin: auto 30px;
+}
+
 .tabs {
   display: flex;
   flex-direction: row;
@@ -63,4 +109,11 @@
   font-weight: bold;
   font-size: 18px;
   border: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .action-tab {
+    font-size: 12px;
+    margin: auto 10px;
+  }
 }

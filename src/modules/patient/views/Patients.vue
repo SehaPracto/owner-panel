@@ -1,15 +1,48 @@
 <template>
   <div class="patients">
-    <h1>Patients.....Coming soon</h1>
+    <!-- <div class="tabs">
+      <button
+        class="tab"
+        :class="tab == 'active' ? 'active-tab' : ''"
+        @click="toggleActiveTab"
+      >
+        Active
+      </button>
+      <button
+        class="tab"
+        :class="tab == 'pending' ? 'active-tab' : ''"
+        @click="togglePendingTab"
+      >
+        Pending
+      </button>
+    </div> -->
+    <Loader v-if="isLoading" />
+    <table class="table" v-else>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Profile</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(patient, index) in patients" :key="patient.id">
+          <th scope="row">{{ index + 1 }}</th>
+          <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+          <td>{{ patient.phone }}</td>
+          <td>
+            <button class="profile-btn">Profile</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
-<script>
-export default {};
+<script src="../scripts/patientsScript">
 </script>
 
 <style>
-.patients {
-  min-height: 100vh;
-}
+@import "../styles/patients.css";
 </style>

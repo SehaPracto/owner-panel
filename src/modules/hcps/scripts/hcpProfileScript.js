@@ -45,14 +45,18 @@ export default {
     },
     async sendNotificationToHcp() {
       const response = hcpsServices.sendNotificationToHcp(
-        this,
-        hcp.id,
-        this,
-        notifTitle,
+        this.hcp.id,
+        this.notifTitle,
         this.notifContext
       );
       if (this.isShowNotifModal) {
         this.toggleIsShowNotifModal();
+      }
+    },
+    async toggleHcpActiveState() {
+      const response = await hcpsServices.toggleHcpActiveState(this.hcp.id);
+      if (response["status"] == 1) {
+        this.hcp.is_active = !this.hcp.is_active;
       }
     },
   },

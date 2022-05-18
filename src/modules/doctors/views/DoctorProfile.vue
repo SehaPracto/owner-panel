@@ -2,6 +2,14 @@
   <div class="container profile">
     <Loader v-if="isLoading" />
     <div class="row" v-else>
+      <div class="status-row">
+        <button
+          :class="doctor.is_active ? 'deactivate-btn' : 'activate-btn'"
+          @click="toggleDoctorActiveState"
+        >
+          {{ doctor.is_active ? "Deactivate" : "Approve" }}
+        </button>
+      </div>
       <div class="notif-con">
         <button class="prim-btn" @click="toggleIsShowNotifModal">
           Push Notification

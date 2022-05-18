@@ -35,6 +35,16 @@ class HcpsServices {
     );
     return response;
   }
+  async toggleHcpActiveState(id) {
+    const formData = new FormData();
+    formData.append("hcp_id", id);
+    const response = await axiosProvider.postRequest(
+      "toggle-hcp-active-state",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const hcpsServices = new HcpsServices();

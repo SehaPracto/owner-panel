@@ -47,14 +47,20 @@ export default {
     },
     async sendNotificationToDoctor() {
       const response = doctorServices.sendNotificationToDoctor(
-        this,
-        doctor.id,
-        this,
-        notifTitle,
+        this.doctor.id,
+        this.notifTitle,
         this.notifContext
       );
       if (this.isShowNotifModal) {
         this.toggleIsShowNotifModal();
+      }
+    },
+    async toggleDoctorActiveState() {
+      const response = await doctorServices.toggleDoctorActiveState(
+        this.doctor.id
+      );
+      if (response["status"] == 1) {
+        this.doctor.is_active = !this.doctor.is_active;
       }
     },
   },

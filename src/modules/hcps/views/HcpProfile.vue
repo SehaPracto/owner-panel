@@ -2,6 +2,14 @@
   <div class="container profile">
     <Loader v-if="isLoading" />
     <div class="row" v-else>
+      <div class="status-row">
+        <button
+          :class="hcp.is_active ? 'deactivate-btn' : 'activate-btn'"
+          @click="toggleHcpActiveState"
+        >
+          {{ hcp.is_active ? "Deactivate" : "Approve" }}
+        </button>
+      </div>
       <div class="notif-con">
         <button class="prim-btn" @click="toggleIsShowNotifModal">
           Push Notification
@@ -227,5 +235,6 @@
 </script>
 
 <style>
+@import "@/assets/styles/global.css";
 @import "../styles/hcps.css";
 </style>

@@ -37,6 +37,16 @@ class DoctorServices {
     );
     return response;
   }
+  async toggleDoctorActiveState(id) {
+    const formData = new FormData();
+    formData.append("doctor_id", id);
+    const response = await axiosProvider.postRequest(
+      "toggle-doctor-active-state",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const doctorServices = new DoctorServices();

@@ -23,3 +23,25 @@
 .prim-btn:hover {
   background-color: #4ab9b1;
 }
+
+.activate-btn {
+  color: #fff;
+  background: #4ab9b1;
+  height: 40px;
+  width: 150px;
+  border-radius: 15px;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.deactivate-btn {
+  color: #fff;
+  background: #f57c7c;
+  height: 40px;
+  width: 150px;
+  border-radius: 15px;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+}

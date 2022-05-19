@@ -79,7 +79,7 @@
   border-radius: 10px;
 }
 
-.doctor-profile-img {
+.patient-profile-img {
   height: 200px;
   width: 200px;
   margin: 20px auto;
@@ -94,20 +94,20 @@
   text-align: center;
 }
 
-.doctor-profile-tab {
+.patient-profile-tab {
   background: #fff;
   font-weight: bold;
   font-size: 18px;
 }
 
-.doctor-profile-active-tab {
+.patient-profile-active-tab {
   background: #3f4394;
   color: #fff;
   height: 40px;
-  width: 150px;
+  width: 200px;
   border-radius: 20px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
 }
 

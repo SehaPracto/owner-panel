@@ -9,6 +9,13 @@ class PatientsServices {
     );
     return response;
   }
+  async getPatientProfile(id) {
+    const response = await axiosProvider.getRequest(
+      `get-patient/${id}`,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const patientsServices = new PatientsServices();

@@ -32,7 +32,12 @@
           <td>{{ patient.first_name }} {{ patient.last_name }}</td>
           <td>{{ patient.phone }}</td>
           <td>
-            <button class="profile-btn">Profile</button>
+            <button
+              class="profile-btn"
+              @click="$router.push(`/patient/${patient.id}`)"
+            >
+              Profile
+            </button>
           </td>
         </tr>
       </tbody>
@@ -40,7 +45,7 @@
   </div>
 </template>
 
-<script src="../scripts/patientsScript">
+<script src="../scripts/patientsScripts.js">
 </script>
 
 <style>

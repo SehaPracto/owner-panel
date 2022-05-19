@@ -51,6 +51,18 @@ const routes = [
     },
   },
   {
+    path: "/patient/:id",
+    name: "patient-profile",
+    component: () => import("../modules/patient/views/PatientProfile.vue"),
+    beforeEnter: (to, from, next) => {
+      if (to.name == "patient-profile" && !createStore.state.token) {
+        next("/");
+      } else {
+        next();
+      }
+    },
+  },
+  {
     path: "/slide/:id",
     name: "slide",
     component: () => import("@/modules/slides/components/EditSlide.vue"),

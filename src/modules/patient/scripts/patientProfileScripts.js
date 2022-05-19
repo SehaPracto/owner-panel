@@ -32,7 +32,16 @@ export default {
     setActiveTab(id) {
       this.activeTab = id;
     },
-    async sendNotificationToPatient() {},
+    async sendNotificationToPatient() {
+      const response = await patientsServices.sendNotificationToPatient(
+        this.patient.id,
+        this.notifTitle,
+        this.notifContext
+      );
+      if (this.isShowNotifModal) {
+        this.toggleIsShowNotifModal();
+      }
+    },
     async getPatientProfile() {
       this.toggleIsLoading();
       this.setPatientId();

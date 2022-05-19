@@ -23,6 +23,7 @@
           <th scope="col">#</th>
           <th scope="col">Date</th>
           <th scope="col">Time</th>
+          <th scope="col">Type</th>
           <th scope="col">Doctor Name</th>
           <th scope="col">Doctor's phone</th>
           <th scope="col">Patient Name</th>
@@ -34,6 +35,7 @@
           <th scope="row">{{ index + 1 }}</th>
           <td>{{ appointment.start }}</td>
           <td>{{ appointment.date }}</td>
+          <td>{{ appointment.type }}</td>
           <td>
             {{ appointment.doctor.first_name }}
             {{ appointment.doctor.last_name }}

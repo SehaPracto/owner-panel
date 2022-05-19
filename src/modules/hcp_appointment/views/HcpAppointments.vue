@@ -23,6 +23,7 @@
           <th scope="col">#</th>
           <th scope="col">Date</th>
           <th scope="col">Time</th>
+          <th scope="col">Type</th>
           <th scope="col">HCP Name</th>
           <th scope="col">HCP's phone</th>
           <th scope="col">Patient Name</th>
@@ -32,8 +33,9 @@
       <tbody>
         <tr v-for="(appointment, index) in appointments" :key="appointment.id">
           <th scope="row">{{ index + 1 }}</th>
-          <td>{{ appointment.start }}</td>
           <td>{{ appointment.date }}</td>
+          <td>{{ appointment.start }}</td>
+          <td>{{ appointment.type }}</td>
           <td>
             {{ appointment.hcp.first_name }}
             {{ appointment.hcp.last_name }}

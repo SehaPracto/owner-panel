@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      component: "HomeCharts",
+      component: localStorage.getItem("lastTab") ?? "HomeCharts",
     };
   },
   methods: {

@@ -14,8 +14,10 @@
     <div class="max-w-md h-full w-full space-y-8">
       <div>
         <img
-          class="mx-auto h-18px w-auto"
-          src="https://app.sehapracto.com/img/logo.png"
+          style="margin: auto auto"
+          height="150"
+          width="150"
+          src="https://app.sehapracto.net/img/logo.png"
           alt="Workflow"
         />
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">

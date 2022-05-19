@@ -5,7 +5,7 @@ class AxiosProvider {
 
   // baseUrl = "http://192.168.1.102:3000/adminapi";
   // baseUrl = "http://10.106.12.155:3000/adminapi";
-  baseUrl = "https://app.sehapracto.com/adminapi";
+  baseUrl = "https://app.sehapracto.net/adminapi";
 
   async getRequest(path, token = "") {
     try {

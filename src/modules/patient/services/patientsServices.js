@@ -21,7 +21,7 @@ class PatientsServices {
     formData.append("user_id", id);
     formData.append("title", title);
     formData.append("context", context);
-    const response = await axiosProvider(
+    const response = await axiosProvider.postRequest(
       "send-notification-to-patient",
       formData,
       store.state.token

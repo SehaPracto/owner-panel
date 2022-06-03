@@ -14,8 +14,10 @@
       <SpecialtyRow
         v-for="specialty in specialties"
         :key="specialty.id"
+        :id="specialty.id"
         :name="specialty.name"
         :img="specialty.img"
+        :currentView="currentView"
       />
     </div>
   </div>

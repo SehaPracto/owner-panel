@@ -104,6 +104,19 @@ const routes = [
     },
   },
   {
+    path: "/doctor-department-services/:id",
+    name: "doctor-department-services",
+    component: () =>
+      import("@/modules/specialties/views/DoctorDepartmentServices.vue"),
+    beforeEnter: (to, from, next) => {
+      if (to.name == "doctor-department-services" && !createStore.state.token) {
+        next("/");
+      } else {
+        next();
+      }
+    },
+  },
+  {
     path: "/:catchAll(.*)",
     name: "NotFound",
     component: () => import("@/components/PageNotFound.vue"),

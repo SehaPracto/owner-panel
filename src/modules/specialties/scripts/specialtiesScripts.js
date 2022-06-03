@@ -36,6 +36,7 @@ export default {
       this.toggleIsLoading();
       const response = await specialtiesServices.getDoctorSpecialties();
       this.specialties = response["specialties"];
+      console.log(response["specialties"]);
       this.toggleIsLoading();
     },
     async getAllHcpSpecialties() {

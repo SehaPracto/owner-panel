@@ -9,6 +9,9 @@
       </div>
       <div class="col-md-4 slide-row-con text-center">
         <button class="custom-btn edit-btn">Edit</button>
+        <button class="custom-btn edit-btn" @click="goToAddDelete">
+          Add/Delete Service
+        </button>
       </div>
     </div>
   </div>
@@ -16,7 +19,16 @@
 
 <script>
 export default {
-  props: ["name", "img"],
+  props: ["id", "name", "img", "currentView"],
+  methods: {
+    goToAddDelete() {
+      if (this.currentView == "doctor") {
+        this.$router.push(`/doctor-department-services/${this.id}`);
+      } else {
+        return;
+      }
+    },
+  },
 };
 </script>
 

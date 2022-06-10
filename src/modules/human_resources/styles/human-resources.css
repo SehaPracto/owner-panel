@@ -32,7 +32,22 @@
   z-index: 100;
 }
 .input-text {
-  width: 90%;
+  width: 70%;
+  margin: 10px auto;
+}
+
+.personal-info {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-select {
+  width: 250px;
+  margin: 15px auto;
+  border-radius: 15px;
 }
 
 @media only screen and (max-width: 700px) {

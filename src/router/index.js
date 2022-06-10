@@ -117,6 +117,18 @@ const routes = [
     },
   },
   {
+    path: "/add-admin",
+    name: "add-admin",
+    component: () => import("@/modules/human_resources/views/AddAdmin.vue"),
+    beforeEnter: (to, from, next) => {
+      if (to.name == "add-admin" && !createStore.state.token) {
+        next("/");
+      } else {
+        next();
+      }
+    },
+  },
+  {
     path: "/:catchAll(.*)",
     name: "NotFound",
     component: () => import("@/components/PageNotFound.vue"),

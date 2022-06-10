@@ -15,6 +15,9 @@
         <HomeStatisticsCard title="Number of Hospitals" :number="noHospital" />
       </a-col>
     </a-row>
+    <div>
+      <!-- <LineChart /> -->
+    </div>
   </div>
 </template>
 
@@ -22,10 +25,12 @@
 import HomeStatisticsCard from "./HomeStatisticsCard.vue";
 import Loader from "@/components/Loader.vue";
 import axiosProvider from "@/data/providers/axiosProvider";
+import LineChart from "./LineChart.vue";
 export default {
   components: {
     HomeStatisticsCard,
     Loader,
+    LineChart,
   },
   data() {
     return {

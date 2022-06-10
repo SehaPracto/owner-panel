@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <button class="create-department-btn">
+    <button class="create-department-btn" @click="$router.push('/add-admin')">
       <i class="fas fa-plus"></i> Add Admin
     </button>
     <div class="add-department-con">

@@ -28,6 +28,22 @@ class HumanResourcesService {
     );
     return response;
   }
+
+  async addAdmin(name, email, phone, password, departmentId, countryId) {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("phone", phone);
+    formData.append("password", password);
+    formData.append("department_id", departmentId);
+    formData.append("country_id", countryId);
+    const response = await axiosProvider.postRequest(
+      "add-admin",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const humanResourcesServices = new HumanResourcesService();

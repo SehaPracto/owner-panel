@@ -50,13 +50,13 @@ export default {
       this.toggleIsAddCity();
     },
     async addProvinceToCity() {
-      this.isAddProvince();
+      this.toggleIsAddProvince();
       const response = await countryServices.addProvince(
         this.provinceName,
         this.provinceNameAr,
         this.cityId
       );
-      this.isAddProvince();
+      this.toggleIsAddProvince();
     },
     async getCountryCities() {
       const response = await countryServices.getCountryCities(this.countryId);

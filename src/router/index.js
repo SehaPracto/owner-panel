@@ -129,6 +129,18 @@ const routes = [
     },
   },
   {
+    path: "/edit-country/:id",
+    name: "edit-country",
+    component: () => import("@/modules/countries/views/EditCountry.vue"),
+    beforeEnter: (to, from, next) => {
+      if (to.name == "edit-country" && !createStore.state.token) {
+        next("/");
+      } else {
+        next();
+      }
+    },
+  },
+  {
     path: "/:catchAll(.*)",
     name: "NotFound",
     component: () => import("@/components/PageNotFound.vue"),

@@ -24,11 +24,9 @@
           </option>
         </select>
 
-        <!-- 
-        <p>{{}}</p>
-        <p>{{}}</p>
-        <p>{{}}</p>
-        <p>{{}}</p> -->
+        <button class="add-btn col-md-12" @click="goToEditCountry">
+          <i class="fas fa-edit"></i> Edit Country
+        </button>
       </div>
       <div
         class="col-md-4 text-center"

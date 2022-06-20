@@ -37,6 +37,32 @@ class CountryServices {
     );
     return response;
   }
+
+  async addCity(name, nameAr, countryID) {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("name_ar", nameAr);
+    formData.append("country_id", countryID);
+    const response = await axiosProvider.postRequest(
+      "add-city",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
+
+  async addProvince(name, nameAr, cityID) {
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("name_ar", nameAr);
+    formData.append("city_id", cityID);
+    const response = await axiosProvider.postRequest(
+      "add-province",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const countryServices = new CountryServices();

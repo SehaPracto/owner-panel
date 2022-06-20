@@ -49,6 +49,13 @@ export default {
       const response = await countryServices.getCityProvinces(id);
       this.cityProvinces = response["provinces"];
     },
+    goToEditCountry() {
+      if (this.countryId == 0) {
+        console.log("0");
+        return;
+      }
+      this.$router.push(`/edit-country/${this.countryId}`);
+    },
   },
   async mounted() {
     this.isLoading = true;

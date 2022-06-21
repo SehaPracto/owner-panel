@@ -47,6 +47,34 @@ class DoctorServices {
     );
     return response;
   }
+  async updateDoctorProfile(doctor) {
+    const formData = new FormData();
+    formData.append("doctor_id", doctor.id);
+    formData.append("first_name", doctor.first_name);
+    formData.append("last_name", doctor.last_name);
+    formData.append("email", doctor.email);
+    formData.append("phone", doctor.phone);
+    formData.append("city_id", doctor.city_id);
+    formData.append("adress", doctor.adress);
+    formData.append("waiting_time", doctor.waiting_time);
+    formData.append("examination_fee", doctor.examination_fee);
+    const response = await axiosProvider.postRequest(
+      "update-doctor-profile",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
+  async createDoctorScheduleService(id) {
+    const formData = new FormData();
+    formData.append("doctor_id", id);
+    const response = await axiosProvider.postRequest(
+      "create-doctor-schedule",
+      formData,
+      store.state.token
+    );
+    return response;
+  }
 }
 
 const doctorServices = new DoctorServices();

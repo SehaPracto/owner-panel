@@ -1,5 +1,6 @@
 import doctorServices from "../services/doctorServices";
 import Loader from "@/components/Loader.vue";
+import countryServices from "@/modules/countries/services/countryServices";
 
 export default {
   components: { Loader },
@@ -17,6 +18,7 @@ export default {
       workingHour: [],
       notifTitle: "",
       notifContext: "",
+      cities: [],
     };
   },
   methods: {
@@ -35,19 +37,19 @@ export default {
     getDoctorIdFromUrlParam() {
       return this.$route.params.id;
     },
+    handleCityChange(event) {
+      this.doctor.city_id = event.target.value;
+    },
     async getDoctorProfile() {
       this.setActiveTab(0);
-      this.toggleIsLoading();
       const id = this.getDoctorIdFromUrlParam();
       const response = await doctorServices.getDoctorProfile(id);
-      console.log(response);
       this.doctor = response["doctor"];
       this.medicalSpecialty = response["doctor"]["medical_specialty"];
       this.medicalDegree = response["doctor"]["medical_degree"];
       this.doctorWorkLocation = response["doctor"]["doctor_work_location"];
       this.appointment = response["doctor"]["appointment"];
       this.workingHour = response["doctor"]["working_hour"];
-      this.toggleIsLoading();
     },
     async sendNotificationToDoctor() {
       const response = doctorServices.sendNotificationToDoctor(
@@ -67,8 +69,28 @@ export default {
         this.doctor.is_active = !this.doctor.is_active;
       }
     },
+    async getCities() {
+      const response = await countryServices.getCountryCities(
+        this.doctor.country_id
+      );
+      this.cities = response["cities"];
+    },
+    async updateDoctor() {
+      const response = await doctorServices.updateDoctorProfile(this.doctor);
+      console.log(response);
+    },
+    async createDoctorSchedule() {
+      const response = await doctorServices.createDoctorScheduleService(
+        this.doctor.id
+      );
+      this.getDoctorProfile();
+      console.log(response);
+    },
   },
   async mounted() {
+    this.toggleIsLoading();
     await this.getDoctorProfile();
+    await this.getCities();
+    this.toggleIsLoading();
   },
 };

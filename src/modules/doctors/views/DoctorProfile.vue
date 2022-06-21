@@ -251,13 +251,18 @@
               <th scope="col">Start</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody v-if="workingHour.length > 0">
             <tr v-for="(wHour, index) in workingHour" :key="wHour.id">
               <th scope="row">{{ index + 1 }}</th>
               <td>{{ wHour.day_time }}</td>
               <td>{{ wHour.start }}</td>
             </tr>
           </tbody>
+          <div v-else>
+            <button class="prim-btn" @click="createDoctorSchedule">
+              Create Schedule
+            </button>
+          </div>
         </table>
       </div>
     </div>
@@ -265,46 +270,69 @@
       <div class="update-profile-modal-background">
         <div class="update-profile-modal">
           <h3 style="font-weight: bold">Edit profile</h3>
-          <form action="">
+          <form @submit.prevent="updateDoctor">
             <input
               class="input-text"
               type="text"
               placeholder="First name"
-              :value="doctor.first_name"
+              v-model="doctor.first_name"
             />
             <input
               class="input-text"
               type="text"
               placeholder="Last name"
-              :value="doctor.last_name"
+              v-model="doctor.last_name"
             />
+            <hr />
+            <select
+              ref="cities"
+              class="form-select city-select"
+              aria-label="Default select example"
+              @change.prevent="handleCityChange"
+              v-model="doctor.city_id"
+            >
+              <option v-for="city in cities" :key="city.id" :value="city.id">
+                {{ city.name }}-{{ city.name_ar }}
+              </option>
+            </select>
             <input
               class="input-text"
               type="text"
               placeholder="Adress"
-              :value="doctor.adress"
+              v-model="doctor.adress"
             />
             <input
               class="input-text"
               type="text"
               placeholder="Phone"
-              :value="doctor.phone"
+              v-model="doctor.phone"
             />
             <input
               class="input-text"
               type="text"
               placeholder="Email"
-              :value="doctor.email"
+              v-model="doctor.email"
             />
             <input
-              type="submit"
-              class="prim-btn"
-              style="margin-top: 25px"
-              value="Update"
+              class="input-text"
+              type="text"
+              placeholder="Waiting time"
+              v-model="doctor.waiting_time"
             />
-            <button class="cancel-btn" @click="toggleIsShowEditModal">
-              Cancel
-            </button>
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Examination fee"
+              v-model="doctor.examination_fee"
+            />
+            <p>
+              <input type="submit" class="prim-btn" value="Update" />
+            </p>
+            <p>
+              <button class="cancel-btn" @click="toggleIsShowEditModal">
+                Cancel
+              </button>
+            </p>
           </form>
         </div>
       </div>
@@ -330,10 +358,15 @@
   z-index: 20000;
 }
 .update-profile-modal {
-  height: 500px;
+  height: 780px;
   width: 450px;
   background: #fff;
   border-radius: 15px;
   padding: 15px;
+}
+.city-select {
+  width: 90%;
+  border-radius: 15px;
+  margin: auto auto;
 }
 </style>

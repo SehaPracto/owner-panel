@@ -10,6 +10,13 @@
           {{ hcp.is_active ? "Deactivate" : "Approve" }}
         </button>
       </div>
+      <button
+        class="prim-btn"
+        style="margin: 15px auto"
+        @click="toggleIsShowEditModal"
+      >
+        Edit Profile
+      </button>
       <div class="notif-con">
         <button class="prim-btn" @click="toggleIsShowNotifModal">
           Push Notification
@@ -218,14 +225,95 @@
               <th scope="col">Start</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody v-if="workingHour.length > 0">
             <tr v-for="(wHour, index) in workingHour" :key="wHour.id">
               <th scope="row">{{ index + 1 }}</th>
               <td>{{ wHour.day_time }}</td>
               <td>{{ wHour.start }}</td>
             </tr>
           </tbody>
+          <div v-else>
+            <button class="prim-btn" @click="createHcpSchedule">
+              Create Schedule
+            </button>
+          </div>
         </table>
+      </div>
+    </div>
+    <div style="position: absolute" v-if="isShowEditModal">
+      <div class="update-profile-modal-background">
+        <div class="update-profile-modal">
+          <h3 style="font-weight: bold">Edit profile</h3>
+          <form @submit.prevent="updateHcp">
+            <input
+              class="input-text"
+              type="text"
+              placeholder="First name"
+              v-model="hcp.first_name"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Last name"
+              v-model="hcp.last_name"
+            />
+            <hr />
+            <select
+              ref="cities"
+              class="form-select city-select"
+              aria-label="Default select example"
+              @change.prevent="handleCityChange"
+              v-model="hcp.city_id"
+            >
+              <option v-for="city in cities" :key="city.id" :value="city.id">
+                {{ city.name }}-{{ city.name_ar }}
+              </option>
+            </select>
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Adress"
+              v-model="hcp.adress"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Phone"
+              v-model="hcp.phone"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Email"
+              v-model="hcp.email"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Waiting time"
+              v-model="hcp.waiting_time"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Examination fee"
+              v-model="hcp.examination_fee"
+            />
+            <p>
+              <input
+                type="submit"
+                class="prim-btn"
+                value="Update"
+                @click="updateHcp"
+              />
+            </p>
+            <p>
+              <button class="cancel-btn" @click="toggleIsShowEditModal">
+                Cancel
+              </button>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -237,4 +325,27 @@
 <style>
 @import "@/assets/styles/global.css";
 @import "../styles/hcps.css";
+
+.update-profile-modal-background {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.199);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+}
+.update-profile-modal {
+  height: 750px;
+  width: 450px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+}
+.city-select {
+  width: 90%;
+  border-radius: 15px;
+  margin: auto auto;
+}
 </style>

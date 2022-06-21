@@ -7,6 +7,7 @@ export default {
     return {
       isLoading: false,
       isShowNotifModal: false,
+      isShowEditModal: false,
       activeTab: 0,
       doctor: [],
       medicalSpecialty: [],
@@ -27,6 +28,9 @@ export default {
     },
     toggleIsShowNotifModal() {
       this.isShowNotifModal = !this.isShowNotifModal;
+    },
+    toggleIsShowEditModal() {
+      this.isShowEditModal = !this.isShowEditModal;
     },
     getDoctorIdFromUrlParam() {
       return this.$route.params.id;

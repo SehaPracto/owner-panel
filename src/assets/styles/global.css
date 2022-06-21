@@ -20,6 +20,18 @@
   text-align: center;
 }
 
+.cancel-btn {
+  color: #fff;
+  background: #fd7e7e;
+  height: 40px;
+  width: 150px;
+  border-radius: 15px;
+  border: none;
+  margin: auto auto;
+  font-size: 18px;
+  text-align: center;
+}
+
 .prim-btn:hover {
   background-color: #4ab9b1;
 }

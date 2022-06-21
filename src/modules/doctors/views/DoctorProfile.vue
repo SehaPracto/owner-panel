@@ -1,5 +1,5 @@
 <template>
-  <div class="container profile">
+  <div class="container profile" style="position: relative">
     <Loader v-if="isLoading" />
     <div class="row" v-else>
       <div class="status-row">
@@ -10,6 +10,13 @@
           {{ doctor.is_active ? "Deactivate" : "Approve" }}
         </button>
       </div>
+      <button
+        class="prim-btn"
+        style="margin: 15px auto"
+        @click="toggleIsShowEditModal"
+      >
+        Edit Profile
+      </button>
       <div class="notif-con">
         <button class="prim-btn" @click="toggleIsShowNotifModal">
           Push Notification
@@ -254,6 +261,54 @@
         </table>
       </div>
     </div>
+    <div style="position: absolute" v-if="isShowEditModal">
+      <div class="update-profile-modal-background">
+        <div class="update-profile-modal">
+          <h3 style="font-weight: bold">Edit profile</h3>
+          <form action="">
+            <input
+              class="input-text"
+              type="text"
+              placeholder="First name"
+              :value="doctor.first_name"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Last name"
+              :value="doctor.last_name"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Adress"
+              :value="doctor.adress"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Phone"
+              :value="doctor.phone"
+            />
+            <input
+              class="input-text"
+              type="text"
+              placeholder="Email"
+              :value="doctor.email"
+            />
+            <input
+              type="submit"
+              class="prim-btn"
+              style="margin-top: 25px"
+              value="Update"
+            />
+            <button class="cancel-btn" @click="toggleIsShowEditModal">
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -263,4 +318,22 @@
 <style>
 @import "@/assets/styles/global.css";
 @import "../styles/doctors.css";
+
+.update-profile-modal-background {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.199);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 20000;
+}
+.update-profile-modal {
+  height: 500px;
+  width: 450px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+}
 </style>

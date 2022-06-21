@@ -74,12 +74,11 @@ export default {
     },
     async updateHcp() {
       const response = await hcpsServices.updateHcpProfile(this.hcp);
-      console.log(response);
+      this.isShowEditModal = false;
     },
     async createHcpSchedule() {
       const response = await hcpsServices.createHcpScheduleService(this.hcp.id);
       this.getHcpProfile();
-      console.log(response);
     },
   },
   async mounted() {

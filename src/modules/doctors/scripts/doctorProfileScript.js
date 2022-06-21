@@ -77,14 +77,13 @@ export default {
     },
     async updateDoctor() {
       const response = await doctorServices.updateDoctorProfile(this.doctor);
-      console.log(response);
+      this.isShowEditModal = false;
     },
     async createDoctorSchedule() {
       const response = await doctorServices.createDoctorScheduleService(
         this.doctor.id
       );
       this.getDoctorProfile();
-      console.log(response);
     },
   },
   async mounted() {

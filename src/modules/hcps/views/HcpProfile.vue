@@ -280,12 +280,14 @@
               type="text"
               placeholder="Phone"
               v-model="hcp.phone"
+              :disabled="hcp.phone_verified_at != null"
             />
             <input
               class="input-text"
               type="text"
               placeholder="Email"
               v-model="hcp.email"
+              :disabled="hcp.email_verified_at != null"
             />
             <input
               class="input-text"

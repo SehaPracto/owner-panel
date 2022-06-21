@@ -37,6 +37,7 @@ class DoctorServices {
     );
     return response;
   }
+
   async toggleDoctorActiveState(id) {
     const formData = new FormData();
     formData.append("doctor_id", id);
@@ -47,6 +48,7 @@ class DoctorServices {
     );
     return response;
   }
+
   async updateDoctorProfile(doctor) {
     const formData = new FormData();
     formData.append("doctor_id", doctor.id);
@@ -65,6 +67,7 @@ class DoctorServices {
     );
     return response;
   }
+
   async createDoctorScheduleService(id) {
     const formData = new FormData();
     formData.append("doctor_id", id);

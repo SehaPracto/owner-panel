@@ -306,12 +306,14 @@
               type="text"
               placeholder="Phone"
               v-model="doctor.phone"
+              :disabled="doctor.phone_verified_at != null"
             />
             <input
               class="input-text"
               type="text"
               placeholder="Email"
               v-model="doctor.email"
+              :disabled="doctor.email_verified_at != null"
             />
             <input
               class="input-text"

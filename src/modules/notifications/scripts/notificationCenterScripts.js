@@ -17,16 +17,16 @@ export default {
     handleSubmitNotification() {
       switch (this.type) {
         case "general":
-          this.sendNotificationToAll;
+          this.sendNotificationToAll();
           break;
         case "users":
-          this.sendNotificationToUsers;
+          this.sendNotificationToUsers();
           break;
         case "drs":
-          this.sendNotificationToDoctors;
+          this.sendNotificationToDoctors();
           break;
         case "hcps":
-          this.sendNotificationToHcps;
+          this.sendNotificationToHcps();
           break;
       }
     },

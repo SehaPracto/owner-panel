@@ -12,6 +12,7 @@ export default {
       admin: [],
       newImg: null,
       updateMsg: "",
+      file: null,
     };
   },
   methods: {
@@ -28,6 +29,7 @@ export default {
       this.$refs["profile-img"].src = URL.createObjectURL(
         event.target.files[0]
       );
+      this.file = event.target.files[0];
     },
     async updateProfileInfo() {
       this.updateMsg = "";

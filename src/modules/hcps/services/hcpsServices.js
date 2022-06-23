@@ -54,6 +54,7 @@ class HcpsServices {
     formData.append("phone", hcp.phone);
     formData.append("city_id", hcp.city_id);
     formData.append("adress", hcp.adress);
+    formData.append("gender", hcp.gender);
     formData.append("waiting_time", hcp.waiting_time);
     formData.append("examination_fee", hcp.examination_fee);
     const response = await axiosProvider.postRequest(

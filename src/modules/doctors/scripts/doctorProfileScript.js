@@ -40,6 +40,9 @@ export default {
     handleCityChange(event) {
       this.doctor.city_id = event.target.value;
     },
+    handleGenderChange(event) {
+      this.doctor.gender = event.target.value;
+    },
     async getDoctorProfile() {
       this.setActiveTab(0);
       const id = this.getDoctorIdFromUrlParam();

@@ -39,6 +39,9 @@ export default {
     handleCityChange(event) {
       this.hcp.city_id = event.target.value;
     },
+    handleGenderChange(event) {
+      this.hcp.gender = event.target.value;
+    },
     async getHcpProfile() {
       this.setActiveTab(0);
       const id = this.getHcpIdFromUrlParam();

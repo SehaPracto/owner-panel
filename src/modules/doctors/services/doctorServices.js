@@ -58,6 +58,7 @@ class DoctorServices {
     formData.append("phone", doctor.phone);
     formData.append("city_id", doctor.city_id);
     formData.append("adress", doctor.adress);
+    formData.append("gender", doctor.gender);
     formData.append("waiting_time", doctor.waiting_time);
     formData.append("examination_fee", doctor.examination_fee);
     const response = await axiosProvider.postRequest(

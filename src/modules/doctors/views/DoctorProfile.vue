@@ -295,6 +295,16 @@
                 {{ city.name }}-{{ city.name_ar }}
               </option>
             </select>
+            <select
+              ref="gender"
+              class="form-select city-select mt-1"
+              aria-label="Default select example"
+              @change.prevent="handleGenderChange"
+              v-model="doctor.gender"
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
             <input
               class="input-text"
               type="text"

@@ -1,9 +1,12 @@
 import slidesServices from "../services/slidesServices";
+import { QuillEditor } from "@vueup/vue-quill";
+import "@vueup/vue-quill/dist/vue-quill.snow.css";
 import Loader from "@/components/Loader.vue";
 
 export default {
   components: {
     Loader,
+    QuillEditor,
   },
 
   data() {

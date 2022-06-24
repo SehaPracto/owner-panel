@@ -42,7 +42,7 @@
         v-model="slide.link"
       />
 
-      <textarea
+      <!-- <textarea
         class="input-text"
         name=""
         id=""
@@ -51,7 +51,13 @@
         style="resize: none"
         placeholder="Description"
         v-model="slide.description"
-      ></textarea>
+      ></textarea> -->
+      <QuillEditor
+        style="height: 500px"
+        theme="snow"
+        v-model:content="slide.description"
+        contentType="html"
+      />
       <button class="update-btn" @click="updateSlide">Update</button>
     </div>
   </div>

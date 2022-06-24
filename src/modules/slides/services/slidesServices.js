@@ -25,7 +25,9 @@ class SlidesServices {
     formData.append("description", description);
     formData.append("contact", contact);
     formData.append("link", link);
-    formData.append("img", img);
+    if (img != null) {
+      formData.append("img", img);
+    }
     const response = await axiosProvider.postRequest(
       "create-slide/",
       formData,

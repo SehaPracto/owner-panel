@@ -35,7 +35,8 @@
         v-model="contact"
       />
       <input class="input-text" type="text" placeholder="Link" v-model="link" />
-
+      <div v-html="description"></div>
+      <!-- 
       <textarea
         class="input-text"
         name=""
@@ -45,7 +46,13 @@
         style="resize: none"
         placeholder="Description"
         v-model="description"
-      ></textarea>
+      ></textarea> -->
+      <QuillEditor
+        style="height: 500px"
+        theme="snow"
+        v-model:content="description"
+        contentType="html"
+      />
       <button class="update-btn" @click="createSlide">Create</button>
     </div>
   </div>

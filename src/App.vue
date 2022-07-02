@@ -17,5 +17,6 @@
 body {
   min-height: 100vh;
   width: 100%;
+  box-sizing: border-box;
 }
 </style>

@@ -29,7 +29,7 @@ class SlidesServices {
       formData.append("img", img);
     }
     const response = await axiosProvider.postRequest(
-      "create-slide/",
+      "create-slide",
       formData,
       store.state.token
     );

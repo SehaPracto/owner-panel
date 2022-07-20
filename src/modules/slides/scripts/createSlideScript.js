@@ -23,8 +23,8 @@ export default {
       this.$refs["img-picker-ref"].click();
     },
     pickImage(event) {
-      this.file = event.target.files[0];
-      this.$refs["display-img"].src = URL.createObjectURL(this.file);
+      this.img = event.target.files[0];
+      this.$refs["display-img"].src = URL.createObjectURL(this.img);
       console.log(this.$refs["display-img"].src);
     },
     async createSlide() {

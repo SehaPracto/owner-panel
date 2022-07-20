@@ -13,6 +13,8 @@ export default {
       description: "",
       contact: "",
       link: "",
+      client_name: "",
+      client_adress: "",
       img: null,
     };
   },
@@ -32,7 +34,9 @@ export default {
         this.description,
         this.contact,
         this.link,
-        this.file
+        this.img,
+        this.client_name,
+        this.client_adress
       );
       console.log(response);
     },

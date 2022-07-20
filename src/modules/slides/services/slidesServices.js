@@ -18,12 +18,23 @@ class SlidesServices {
     return response;
   }
 
-  async createSlide(name, duration, description, contact, link, img) {
+  async createSlide(
+    name,
+    duration,
+    description,
+    contact,
+    link,
+    img,
+    client_name,
+    client_adress
+  ) {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("duration", duration);
     formData.append("description", description);
     formData.append("contact", contact);
+    formData.append("client_name", client_name);
+    formData.append("client_adress", client_adress);
     formData.append("link", link);
     if (img != null) {
       formData.append("img", img);

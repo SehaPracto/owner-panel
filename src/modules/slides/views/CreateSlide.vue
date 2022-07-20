@@ -35,7 +35,19 @@
         v-model="contact"
       />
       <input class="input-text" type="text" placeholder="Link" v-model="link" />
-      <div v-html="description"></div>
+      <input
+        class="input-text"
+        type="text"
+        placeholder="Client Name"
+        v-model="client_name"
+      />
+      <input
+        class="input-text"
+        type="text"
+        placeholder="Client Adress"
+        v-model="client_adress"
+      />
+      <!-- <div v-html="description"></div> -->
       <!-- 
       <textarea
         class="input-text"
